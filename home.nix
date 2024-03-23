@@ -291,6 +291,12 @@
     set cleaner ctpvclear
     &ctpv -s $id
     &ctpvquit $id
+
+    cmd quit-and-cd &{{
+      pwd > $LF_CD_FILE
+      lf -remote "send $id quit"
+    }}
+    map q quit-and-cd
     '';
   };
 

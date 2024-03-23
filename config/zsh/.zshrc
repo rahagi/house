@@ -79,16 +79,24 @@ bindkey "${terminfo[kcuu1]}" history-beginning-search-backward-end
 bindkey "${terminfo[kcud1]}" history-beginning-search-forward-end
 bindkey -M vicmd "k" history-search-backward
 bindkey -M vicmd "j" history-search-forward
-bindkey -s "^O" "rcd\n"
+bindkey -s "^O" "lfcd\n"
 bindkey -s "^T" "st 2> /dev/null& disown %st\n"
 bindkey -s "^f" "fg\n"
 bindkey -s "^r" "fuzzy_history\n"
 bindkey -s "^k" "kerja\n"
 
 # custom function(s)
-rcd() {
-  DIR=/tmp/dir
-  ranger --choosedir=$DIR && cd "$(cat $DIR)"
+lfcd() {
+    export LF_CD_FILE=/tmp/.lfcd-$$
+    command lf $@
+    if [ -s "$LF_CD_FILE" ]; then
+        local DIR="$(realpath "$(cat "$LF_CD_FILE")")"
+        if [ "$DIR" != "$PWD" ]; then
+            cd "$DIR"
+        fi
+        rm "$LF_CD_FILE"
+    fi
+    unset LF_CD_FILE
 }
 
 mkcd() {
