@@ -27,4 +27,6 @@ export TERMINAL=wezterm
 export TERM=wezterm
 export OPENER=xdg-open
 
+export PF_INFO="ascii title os kernel uptime wm shell editor"
+
 . "$HOME/.cache/wal/env-color"
