@@ -345,7 +345,7 @@
 
   home.file = {
     "scripts" = {
-      source = ./dist/scripts;
+      source = ./tools/scripts;
       target = "scripts";
       recursive = true;
     };
