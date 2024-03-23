@@ -162,6 +162,7 @@
     (ctpv.overrideAttrs(prev: { patches = [ ./patches/ctpv/chafa-polite-flag.patch ]; }))
     chafa
     xdragon
+    poppler_utils
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -276,7 +277,7 @@
   programs.lf = {
     enable = true;
     commands = {
-      open = "$$OPENER $f";
+      open = ''$$OPENER "$f"'';
     };
     keybindings = {
       D = "delete";
