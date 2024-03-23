@@ -164,6 +164,7 @@
     xdragon
     poppler_utils
     zathura
+    pfetch-rs
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
