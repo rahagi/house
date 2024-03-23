@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	{ "firefox",     NULL,       1 << 0,       0,          default_opacity, -1 },
 	{ "discord",     NULL,       1 << 2,       0,          default_opacity, -1 },
 	{ "chatterino",  NULL,       1 << 4,       0,          default_opacity, -1 },
-	{ "wezterm",     NULL,       0,            0,          0.9,             -1 },
+	{ "wezterm",     NULL,       0,            0,          0.85,            -1 },
 };
 
 /* layout(s) */
