@@ -145,6 +145,11 @@
     wl-clipboard
     libnotify
     ueberzugpp
+    ffmpegthumbnailer
+    imagemagick
+    (ctpv.overrideAttrs(prev: { patches = [ ./patches/ctpv/chafa-polite-flag.patch ]; }))
+    chafa
+    konsole
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -200,6 +205,16 @@
   };
 
   programs.tmux = {
+    package = with pkgs; tmux.overrideAttrs(prev: rec {
+      version = "3.4";
+      src = fetchFromGitHub {
+        owner = "tmux";
+        repo = "tmux";
+        rev = version;
+        sha256 = "sha256-RX3RZ0Mcyda7C7im1r4QgUxTnp95nfpGgQ2HRxr0s64=";
+      };
+      configureFlags = prev.configureFlags ++ [ "--enable-sixel" ];
+    });
     enable = true;
     clock24 = true;
     keyMode = "vi";
@@ -211,6 +226,9 @@
     set -s escape-time 0
     set -g mouse on
     set-window-option -g mode-keys vi
+    set -g allow-passthrough on
+    set -ga update-environment TERM
+    set -ga update-environment TERM_PROGRAM
 
     bind -T copy-mode-vi v send-keys -X begin-selection
     bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
@@ -247,7 +265,17 @@
     enable = true;
     keybindings = {
       D = "delete";
+      "<f-7>" = ''push :mkdir<space>""<c-b>'';
     };
+    settings = {
+      sixel = true;
+    };
+    extraConfig = ''
+    set previewer ctpv
+    set cleaner ctpvclear
+    &ctpv -s $id
+    &ctpvquit $id
+    '';
   };
 
   home.file = {

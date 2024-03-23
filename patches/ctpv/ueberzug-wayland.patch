@@ -1,0 +1,24 @@
+From 5afc0f2077c67e7cb3b2cf752e70137388486f3c Mon Sep 17 00:00:00 2001
+From: Rahagi Ahnaf Saidani <rahagi@protonmail.com>
+Date: Sat, 23 Mar 2024 15:26:56 +0700
+Subject: [PATCH] feat: force ueberzugpp on wayland
+
+---
+ sh/helpers.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sh/helpers.sh b/sh/helpers.sh
+index 9e94443..ba6edbb 100644
+--- a/sh/helpers.sh
++++ b/sh/helpers.sh
+@@ -52,7 +52,7 @@ set_image_method() {
+ 	[ -n "$forcekittyanim" ] && is_kitty && is_anim_image && { image_method="$image_method_kitty"; return 0; }
+ 	[ -n "$forcechafa" ] && exists chafa && { image_method="$image_method_chafa"; return 0; }
+ 
+-	[ -n "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ] && exists ueberzug &&
++	exists ueberzug &&
+ 		[ -n "$fifo" ] && [ -e "$fifo" ] &&
+ 		{ image_method="$image_method_ueberzug"; return 0; }
+ 
+-- 
+2.43.2
