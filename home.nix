@@ -161,6 +161,7 @@
     imagemagick
     (ctpv.overrideAttrs(prev: { patches = [ ./patches/ctpv/chafa-polite-flag.patch ]; }))
     chafa
+    xdragon
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -280,6 +281,7 @@
     keybindings = {
       D = "delete";
       "<f-7>" = ''push :mkdir<space>""<c-b>'';
+      "<c-d>" = "!dragon -a $fx";
     };
     settings = {
       sixel = true;
