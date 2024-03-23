@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+EMULATOR_DIR="$HOME/infra/emulator/android/11"
+
+if ! docker ps | grep -q redroid; then
+  cd "$EMULATOR_DIR" || exit 1
+  docker compose up -d
+fi
+
+# adb connect emulator-5554
+adb connect localhost:5555
+# scrcpy -s emulator-5554 --audio-codec=aac --video-codec=h264 --video-encoder='OMX.google.h264.encoder'
+scrcpy -s localhost:5555 --audio-codec=aac --video-codec=h264 --video-encoder='OMX.google.h264.encoder' -b 2M

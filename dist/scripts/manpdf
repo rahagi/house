@@ -1,0 +1,9 @@
+#!/bin/sh
+
+manual=$(man . -k 2> /dev/null | dmenu -i)
+manual=$(echo "$manual" | cut -d '(' -f 1 | cut -d, -f 1)
+
+[ -z "$manual" ] && exit 1
+
+man -Tpdf "$manual" | zathura -
+

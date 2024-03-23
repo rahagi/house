@@ -1,0 +1,8 @@
+#!/bin/sh
+
+icon=""
+ssid=$(wpa_cli status | grep ^ssid | cut -d= -f 2)
+
+[ -z "$ssid" ] && ssid="Not Connected"
+
+printf "%s%s\n" "$icon" "$ssid"

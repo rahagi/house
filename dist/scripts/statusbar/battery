@@ -1,0 +1,12 @@
+#!/bin/sh
+
+BAT="/sys/class/power_supply/BAT1"
+
+cap=$(cat "$BAT"/capacity)
+
+[ $cap -le 100 ] && icon=""
+[ $cap -le 50 ] && icon=""
+[ $cap -le 20 ] && icon=""
+[ ! -z $(grep -i "^charging" "$BAT"/status) ] && icon=""
+
+printf "%s%s\n" "$icon" "$cap"

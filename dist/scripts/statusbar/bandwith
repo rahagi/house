@@ -1,0 +1,32 @@
+#!/bin/sh
+
+interface="enp4s0"
+icon=""
+delay=1
+rx=$(cat /sys/class/net/$interface/statistics/rx_bytes)
+tx=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+
+# check if last file has existed for more than 1 second
+if [ -f /tmp/bandwith ]; then
+  last_mod=$(stat -c %Y /tmp/bandwith)
+  now=$(date +%s)
+  if [ $((now - last_mod)) -lt $delay ]; then
+    exit 0
+  fi
+fi
+
+if [ ! -f /tmp/bandwith ]; then
+  echo "$rx $tx" > /tmp/bandwith
+  exit 0
+fi
+
+read -r old_rx old_tx < /tmp/bandwith
+echo "$rx $tx" > /tmp/bandwith
+
+rx_bytes=$((rx - old_rx))
+tx_bytes=$((tx - old_tx))
+
+rx_human=$(numfmt --to=iec --suffix=B $rx_bytes)
+tx_human=$(numfmt --to=iec --suffix=B $tx_bytes)
+
+echo "$icon$rx_human/s $tx_human/s"

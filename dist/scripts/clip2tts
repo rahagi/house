@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+[ "$(pgrep -x mpg123)" ] && killall mpg123 && exit 0
+
+GTTS=$(which gtts-cli)
+[ -z "$GTTS" ] && echo "gtts-cli not found" && exit 1
+
+CLIP=$(xclip -selection clipboard -o)
+[ -z "$CLIP" ] && echo "nothing to read..." && exit 1
+
+echo "$CLIP" | tr '\n' ' ' | $GTTS - | mpg123 -
+

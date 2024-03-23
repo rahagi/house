@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$(pgrep -f "$0")" != "$$" ] && exit 1;
+
+FORMAT='[[%artist%] - [%title%]#|[%file%]]'
+
+while true;
+do
+  [ -n "$(pgrep mpd)" ] && mpd-notify "$(mpc current -f "$FORMAT" --wait)"
+done
