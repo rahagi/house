@@ -46,6 +46,7 @@
     ripgrep
     zerotierone
     openssl
+    bc
 
     gnumake
     cmake
