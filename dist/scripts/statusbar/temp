@@ -1,0 +1,9 @@
+#!/bin/sh
+
+icon=""
+sensors="$(sensors 2>/dev/null)"
+cpu_temp=$(echo "$sensors" | grep Tccd1 | awk '{print $2}' | cut -d '+' -f 2 | head -n 1)
+gpu_temp=$(echo "$sensors" | grep junction  | awk '{print $2}' | cut -d '+' -f 2 | head -n 1)
+
+printf "%s%s %s " "$icon" "CPU" "$cpu_temp"
+printf "%s%s %s\n" "$icon" "GPU" "$gpu_temp"

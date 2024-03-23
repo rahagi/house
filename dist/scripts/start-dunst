@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+. "$HOME/.cache/wal/env-color"
+
+# config file with color values substituted
+# with value from env.
+CONFIG="$HOME/.config/dunst/dunstrc"
+
+dunst -config <(envsubst < "$CONFIG")

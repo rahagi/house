@@ -1,0 +1,8 @@
+#!/bin/sh
+
+icon=""
+ipv4=$(ip -one -4 a show dev enp5s0 | tr -s ' ' | cut -d' ' -f4 | cut -d'/' -f1)
+
+[ -z "$ipv4" ] && ipv4="Not Connected"
+
+printf "%s%s\n" "$icon" "$ipv4"

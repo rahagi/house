@@ -1,0 +1,22 @@
+#!/bin/sh
+
+MUSIC_DIR=$HOME/music
+CURRENT="$@"
+
+show_notif() {
+  notify-send -i "$2" "Now Playing" "$1"
+}
+
+get_albumart() {
+  echo $(find "$1" -maxdepth 1 -type f | grep -i -w 'jpg\|png' | head -n 1)
+}
+
+main() {
+  title=$(echo $CURRENT | cut -d '|' -f 1)
+  file=$(echo $CURRENT | cut -d '|' -f 2)
+  art_dir=$MUSIC_DIR/${file%/*}
+  art=$(get_albumart "$art_dir")
+  show_notif "$title" "$art"
+}
+
+main

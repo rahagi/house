@@ -1,0 +1,28 @@
+#!/bin/sh
+
+DIR="$HOME/screenshots"
+SS="grim"
+FILENAME="$(date --iso-8601=s).png"
+
+[[ ! -d "$DIR" ]] && mkdir -p "$DIR"
+
+case "$1" in
+  --selective-clipboard)
+    $SS -g "$(slurp)" - | wl-copy
+    notify-send "Screenshot Taken" "Copied to Clipboard"
+    ;;
+  --selective)
+    $SS -g "$(slurp)" "$DIR"/"$FILENAME"
+    notify-send "Screenshot Taken" "Saved to $DIR"
+    ;;
+  --all)
+    $SS "$DIR"/"$FILENAME"
+    notify-send "Screenshot Taken" "Saved to $DIR"
+    ;;
+  --all-clipboard)
+    $SS - | wl-copy
+    notify-send "Screenshot Taken" "Copied to Clipboard"
+    ;;
+esac
+
+

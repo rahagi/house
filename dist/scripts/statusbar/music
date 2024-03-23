@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+  1) mpc toggle ;;
+  2) mpc random ;;
+  3) mpc prev ;;
+  4) mpc volume +5 ;;
+  5) mpc volume -5 ;;
+  6) mpc next ;;
+esac
+
+icon=""
+current=$(mpc current)
+shuffle=""
+
+[ ! -z  "$(mpc | grep 'random: on')" ] && shuffle=""
+[ -z "$(echo $current)"  ] && echo "" && exit
+
+printf "%s%s%s\n" "$icon" "$shuffle" "$current"

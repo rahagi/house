@@ -1,0 +1,22 @@
+#!/bin/sh
+
+[ ! -z $(pgrep ffmpeg) ] && killall ffmpeg && notify-send "Screencast" "Stopped screencasting" && exit
+
+DIR="/tmp\n$HOME/screencasts"
+CHOICE=$(echo "$DIR" | dmenu -p dir: )
+FILENAME="screencast_$(date +'%d-%m-%Y_%H:%M:%S').mp4"
+
+[ -z "$CHOICE" ] && exit
+
+notify-send "Screencast" "Started screencasting to $CHOICE"
+ffmpeg -y \
+  -threads 1 \
+  -f pulse \
+  -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor \
+  -f x11grab \
+  -framerate 60 \
+  -s 1366x768 \
+  -i :0.0+1366 \
+  -b:v 2000k \
+  -preset ultrafast \
+  "$CHOICE"/"$FILENAME"

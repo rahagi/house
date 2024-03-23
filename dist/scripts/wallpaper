@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+WALLPAPER="$HOME/.cache/wallpaper.jpg"
+
+wal -i "$WALLPAPER" -n
+swaybg -m fill -i "$WALLPAPER"
+

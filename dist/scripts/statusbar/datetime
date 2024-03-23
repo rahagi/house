@@ -1,0 +1,10 @@
+#!/bin/sh
+
+date_icon=""
+date=$(date "+%a %d-%m-%Y")
+clock_icon=""
+clock=$(date "+%H:%M")
+
+printf "%s%s %s%s\n" "$date_icon" "$date" "$clock_icon" "$clock"
+
+

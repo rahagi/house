@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+LOCATION="-6.9178185,107.7388819"
+FULL=$(curl --max-time 5 -s wttr.in/"$LOCATION"?format="%x:%t\n")
+
+c=$(echo "$FULL" | cut -d: -f1)
+w=$(echo "$FULL" | cut -d: -f2)
+
+icon=""
+[[ -n $(echo "$c" | grep "^m$") ]] && icon=""
+[[ -n $(echo "$c" | grep "!") ]] && icon=""
+[[ -n $(echo "$c" | grep -E "\*|\.") ]] && icon=""
+[[ -n $(echo "$c" | grep "o") ]] && icon=""
+[[ -n $(echo "$c" | grep "x") ]] && icon=""
+
+printf "%s%s" "$icon" "$w"
+

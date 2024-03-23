@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+  1) pamixer -t ;;
+  4) pamixer -i 10 --allow-boost ;;
+  5) pamixer -d 10 --allow-boost ;;
+esac
+
+[ -z "$(pamixer --get-mute | grep false)"  ] && echo 0% && exit
+
+# vol=$(amixer get Master | grep Mono: | awk -F'[][]' '{print $2}' | tr -d '%')
+vol=$(pamixer --get-volume)
+
+if [ "$vol" -ge "75" ]; then
+  icon=""
+elif [ "$vol" -ge "50" ]; then
+  icon=""
+else
+  icon=""
+fi
+
+printf "%s%s%%\n" "$icon" "$vol"

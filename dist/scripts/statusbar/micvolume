@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SOURCE=$(pamixer --list-sources | grep -i "usb audio device mono" | cut -d" " -f1)
+PAMIXER="pamixer --source $SOURCE"
+
+case $BLOCK_BUTTON in
+  1) $PAMIXER -t ;;
+  4) $PAMIXER -i 10 --allow-boost ;;
+  5) $PAMIXER -d 10 --allow-boost ;;
+esac
+
+[ -z "$($PAMIXER --get-mute | grep false)"  ] && echo 0% && exit
+
+vol=$($PAMIXER --get-volume)
+icon=""
+
+printf "%s%s%%\n" "$icon" "$vol"
