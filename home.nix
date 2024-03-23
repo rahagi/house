@@ -163,6 +163,7 @@
     chafa
     xdragon
     poppler_utils
+    zathura
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
