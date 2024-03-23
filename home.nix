@@ -12,6 +12,18 @@
     size = 16;
   };
 
+  xdg.desktopEntries = {
+    nvim = {
+      type = "Application";
+      name = "NeoVim";
+      comment = "NeoVim text editor";
+      icon = "utilities-terminal";
+      terminal = true;
+      exec = "nvim";
+      mimeType = [ "text/plain" ];
+    };
+  };
+
   gtk = {
     enable = true;
     theme = {
@@ -149,7 +161,6 @@
     imagemagick
     (ctpv.overrideAttrs(prev: { patches = [ ./patches/ctpv/chafa-polite-flag.patch ]; }))
     chafa
-    konsole
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -263,6 +274,9 @@
 
   programs.lf = {
     enable = true;
+    commands = {
+      open = "$$OPENER $f";
+    };
     keybindings = {
       D = "delete";
       "<f-7>" = ''push :mkdir<space>""<c-b>'';
@@ -309,6 +323,13 @@
       source = ./config/dunst;
       target = ".config/dunst";
       recursive = true;
+    };
+  };
+
+  home.file = {
+    "./config/dwl-mimeapps.list" = {
+      source = ./config/dwl-mimeapps.list;
+      target = ".config/dwl-mimeapps.list";
     };
   };
 

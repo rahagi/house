@@ -24,5 +24,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export GPG_TTY=$(tty)
 export EDITOR=nvim
 export TERMINAL=wezterm
+export TERM=wezterm
+export OPENER=xdg-open
 
 . "$HOME/.cache/wal/env-color"
