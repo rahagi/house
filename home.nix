@@ -303,6 +303,11 @@
     '';
   };
 
+  services.easyeffects = {
+    enable = true;
+    preset = "HD 58X";
+  };
+
   home.file = {
     ".zshrc" = {
       source = ./config/zsh/.zshrc;
@@ -360,6 +365,14 @@
     "wal-config" = {
       source = ./config/wal;
       target = ".config/wal";
+      recursive = true;
+    };
+  };
+
+  home.file = {
+    ".config/easyeffects/output" = {
+      source = ./config/easyeffects/output;
+      target = ".config/easyeffects/output";
       recursive = true;
     };
   };
