@@ -26,6 +26,7 @@ static const char *const autostart[] = {
   "someblocks", NULL,
   "wallpaper", NULL,
   "start-dunst", NULL,
+  "easyeffectsd", NULL,
   NULL /* terminate */
 };
 
