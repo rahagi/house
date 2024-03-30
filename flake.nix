@@ -19,17 +19,18 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      blackbox = nixpkgs.lib.nixosSystem {
+      guinea-pig = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/guinea-pig
+
           home-manager.nixosModules.home-manager
           {
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.rhg = import ./home.nix;
+            home-manager.users.rhg = import ./home;
           }
         ];
       };

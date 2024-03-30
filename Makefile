@@ -3,3 +3,6 @@ prebuild:
 
 switch-blackbox:
 	sudo nixos-rebuild switch --flake .#blackbox
+
+switch-guinea-pig:
+	sudo nixos-rebuild switch --flake .#guinea-pig

@@ -3,14 +3,12 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
       inputs.sops-nix.nixosModules.sops
     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "blackbox";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Jakarta";
@@ -33,7 +31,6 @@
     isNormalUser = true;
     description = "rhg";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -64,7 +61,7 @@
     pulse.enable = true;
   };
 
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
   sops.age.keyFile = "/home/rhg/.config/sops/age/keys.txt";
   sops.secrets.zerotier-network-id = {};
   services.zerotierone = {
@@ -108,7 +105,7 @@
       noto-fonts
       noto-fonts-cjk
       nerdfonts
-      (pkgs.callPackage ./packages/kairaga.nix {})
+      (pkgs.callPackage ../packages/kairaga.nix {})
     ];
     fontconfig = {
       defaultFonts = {
