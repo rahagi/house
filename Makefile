@@ -1,4 +1,5 @@
 prebuild:
+	./install-age-secret
 	nix-shell ./shell/pywal.nix --command "wal -i wallpaper.jpg"
 
 switch-blackbox:
