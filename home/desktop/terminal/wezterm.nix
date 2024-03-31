@@ -28,7 +28,7 @@
             key = "U",
             action = act.QuickSelectArgs {
               label = "open uri",
-              patterns = { "\\w+?://[a-zA-Z0-9+&@#/%?=~_|!:,.;]*[a-zA-Z0-9+&@#/%=~_|]" };
+              patterns = { "\\w+?://[a-zA-Z0-9+&@#/%?=~_|!:,.;-]*[a-zA-Z0-9+&@#/%=~_|-]" };
               action = wezterm.action_callback(function(window, pane)
                 local url = window:get_selection_text_for_pane(pane)
                 wezterm.log_info('opening: ' .. url)
