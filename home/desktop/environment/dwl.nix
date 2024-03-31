@@ -7,7 +7,7 @@
     ./file-manager/lf.nix
     ./launcher/tofi.nix
     ./notification/dunst.nix
-    ./utils/pywal.nix
+    ./utils
   ];
 
   home.packages = with pkgs; [
