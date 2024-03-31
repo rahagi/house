@@ -41,18 +41,9 @@
     };
   };
 
-  home.file = {
-    "./config/user-dirs.dirs" = {
-      source = ../../config/user-dirs.dirs;
-      target = ".config/user-dirs.dirs";
-    };
-  };
-
-  home.file = {
-    "scripts" = {
-      source = ../../tools/scripts;
-      target = "scripts";
-      recursive = true;
-    };
+  home.file."./config/user-dirs.dirs".source = ../../config/user-dirs.dirs;
+  home.file."scripts" = {
+    source = ../../tools/scripts;
+    recursive = true;
   };
 }

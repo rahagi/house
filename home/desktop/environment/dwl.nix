@@ -10,13 +10,6 @@
     ./utils/pywal.nix
   ];
 
-  home.file = {
-    "./config/dwl-mimeapps.list" = {
-      source = ../../../config/dwl-mimeapps.list;
-      target = ".config/dwl-mimeapps.list";
-    };
-  };
-
   home.packages = with pkgs; [
     ((dwl.overrideAttrs (prev: {
         patches = [

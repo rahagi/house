@@ -1,10 +1,7 @@
 {pkgs, ...}: {
-  home.file = {
-    "./config/dunst" = {
-      source = ../../../../config/dunst;
-      target = ".config/dunst";
-      recursive = true;
-    };
+  xdg.configFile."dunst" = {
+    source = ../../../../config/dunst;
+    recursive = true;
   };
 
   home.packages = [pkgs.dunst];

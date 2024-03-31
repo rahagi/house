@@ -1,14 +1,6 @@
 {pkgs, ...}: {
-  home.file = {
-    ".zshrc" = {
-      source = ../../config/zsh/.zshrc;
-      target = ".zshrc";
-    };
-    ".zprofile" = {
-      source = ../../config/zsh/.zprofile;
-      target = ".zprofile";
-    };
-  };
+  home.file.".zshrc".source = ../../config/zsh/.zshrc;
+  home.file.".zprofile".source = ../../config/zsh/.zprofile;
 
   programs.zsh = {
     enable = true;
