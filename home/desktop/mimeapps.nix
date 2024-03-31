@@ -5,7 +5,7 @@
       "image/jpeg" = "sxiv.desktop";
       "image/png" = "sxiv.desktop";
       "image/gif" = "sxiv.desktop";
-      "image/svg" = "sxiv.desktop";
+      "image/svg+xml" = "sxiv.desktop";
       "text/plain" = "nvim.desktop";
       "text/json" = "nvim.desktop";
       "text/html" = "nvim.desktop";
