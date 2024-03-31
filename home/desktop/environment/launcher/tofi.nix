@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file = {
     "./config/tofi" = {
       source = ../../../../config/tofi;
@@ -9,5 +7,5 @@
     };
   };
 
-  home.packages = [ pkgs.tofi ];
+  home.packages = [pkgs.tofi];
 }

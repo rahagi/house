@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs.wezterm = {
     enable = true;
     extraConfig = ''
@@ -23,7 +21,7 @@
           bottom = '0.5cell',
         },
         keys = {
-          { 
+          {
             mods = "SHIFT|CTRL",
             key = "U",
             action = act.QuickSelectArgs {
@@ -34,7 +32,7 @@
                 wezterm.log_info('opening: ' .. url)
                 wezterm.open_with(url)
               end),
-            } 
+            }
           },
         },
       }

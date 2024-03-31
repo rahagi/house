@@ -1,5 +1,4 @@
-{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
-
+{pkgs ? import <nixpkgs> {config.allowUnfree = true;}}:
 pkgs.mkShellNoCC {
-  packages = with pkgs; [ vault ];
+  packages = with pkgs; [vault];
 }

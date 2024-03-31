@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.lf = {
     enable = true;
     commands = {
@@ -15,20 +13,20 @@
       sixel = true;
     };
     extraConfig = ''
-    set previewer ctpv
-    set cleaner ctpvclear
-    &ctpv -s $id
-    &ctpvquit $id
+      set previewer ctpv
+      set cleaner ctpvclear
+      &ctpv -s $id
+      &ctpvquit $id
 
-    cmd quit-and-cd &{{
-      pwd > $LF_CD_FILE
-      lf -remote "send $id quit"
-    }}
-    map q quit-and-cd
+      cmd quit-and-cd &{{
+        pwd > $LF_CD_FILE
+        lf -remote "send $id quit"
+      }}
+      map q quit-and-cd
     '';
   };
 
-  home.packages = with pkgs; [ 
-    (ctpv.overrideAttrs(prev: { patches = [ ../../../../patches/ctpv/chafa-polite-flag.patch ]; }))
+  home.packages = with pkgs; [
+    (ctpv.overrideAttrs (prev: {patches = [../../../../patches/ctpv/chafa-polite-flag.patch];}))
   ];
 }

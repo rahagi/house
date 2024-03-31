@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file = {
     "wallpaper.jpg" = {
       source = ../../../../wallpaper.jpg;
@@ -13,5 +11,5 @@
     };
   };
 
-  home.packages = with pkgs; [ pywal swaybg ];
+  home.packages = with pkgs; [pywal swaybg];
 }

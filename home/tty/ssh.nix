@@ -1,8 +1,6 @@
-{ ... }:
-
-{
+{...}: {
   programs.ssh = {
     enable = true;
-    includes = [ "config.d/servers" ]; # use config from secret
+    includes = ["config.d/servers"]; # use config from secret
   };
 }

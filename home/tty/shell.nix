@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file = {
     ".zshrc" = {
       source = ../../config/zsh/.zshrc;

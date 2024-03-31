@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./environment/dwl.nix
     ./programs
@@ -22,7 +20,7 @@
       icon = "utilities-terminal";
       terminal = true;
       exec = "nvim";
-      mimeType = [ "text/plain" ];
+      mimeType = ["text/plain"];
     };
   };
 

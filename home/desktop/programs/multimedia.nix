@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file = {
     ".config/easyeffects/output" = {
       source = ../../../config/easyeffects/output;
@@ -14,5 +12,5 @@
     preset = "HD 58X";
   };
 
-  home.packages = with pkgs; [ mpv ];
+  home.packages = with pkgs; [mpv];
 }
