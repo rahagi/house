@@ -39,6 +39,10 @@
       name = "WhiteSur-Dark";
       package = pkgs.whitesur-gtk-theme;
     };
+    iconTheme = {
+      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur-dark";
+    };
   };
 
   home.file."./config/user-dirs.dirs".source = ../../config/user-dirs.dirs;
