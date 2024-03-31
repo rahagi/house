@@ -11,5 +11,7 @@
     poppler_utils
     zathura
     pfetch-rs
+    swappy
+    sxiv
   ];
 }
