@@ -1,5 +1,7 @@
-{ lib, pkgs ? import <nixpkgs> {} }:
-
+{
+  lib,
+  pkgs ? import <nixpkgs> {},
+}:
 pkgs.python3Packages.buildPythonPackage {
   name = "pywal";
   version = "master";

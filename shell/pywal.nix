@@ -1,5 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
-
+{pkgs ? import <nixpkgs> {}}:
 pkgs.mkShellNoCC {
-  packages = with pkgs; [ pywal ];
+  packages = with pkgs; [pywal];
 }

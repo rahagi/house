@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file = {
     "./config/dunst" = {
       source = ../../../../config/dunst;
@@ -9,5 +7,5 @@
     };
   };
 
-  home.packages = [ pkgs.dunst ];
+  home.packages = [pkgs.dunst];
 }

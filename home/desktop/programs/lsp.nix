@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-
-{
-  home.packages = with pkgs; [ 
-    lua-language-server 
-    nil 
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    lua-language-server
+    nil
     alejandra
   ];
 }

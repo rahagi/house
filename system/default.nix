@@ -1,10 +1,12 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [
-      inputs.sops-nix.nixosModules.sops
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -13,7 +15,7 @@
 
   time.timeZone = "Asia/Jakarta";
 
-  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
+  i18n.supportedLocales = ["en_US.UTF-8/UTF-8"];
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -30,7 +32,7 @@
   users.users.rhg = {
     isNormalUser = true;
     description = "rhg";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -70,13 +72,13 @@
   systemd.services.join-zerotier-network = {
     description = "Join ZeroTier Network";
     script = ''
-    ${pkgs.zerotierone}/bin/zerotier-cli join $(cat ${config.sops.secrets.zerotier-network-id.path})
-    ${pkgs.zerotierone}/bin/zerotier-cli set $(cat ${config.sops.secrets.zerotier-network-id.path}) allowDNS=1
+      ${pkgs.zerotierone}/bin/zerotier-cli join $(cat ${config.sops.secrets.zerotier-network-id.path})
+      ${pkgs.zerotierone}/bin/zerotier-cli set $(cat ${config.sops.secrets.zerotier-network-id.path}) allowDNS=1
     '';
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
   };
   nix.gc = {
     automatic = true;
@@ -109,7 +111,7 @@
     ];
     fontconfig = {
       defaultFonts = {
-        monospace = [ "MapleMono" ];
+        monospace = ["MapleMono"];
       };
     };
   };

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     zip
     xz
@@ -30,7 +28,7 @@
     gnupg
     envsubst
     nix-output-monitor
-    btop  
+    btop
     iotop
     iftop
     strace

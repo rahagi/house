@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
-{
-  home.packages = with pkgs; [ chatterino2 discord ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [chatterino2 discord];
 }
