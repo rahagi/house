@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./mimeapps.nix
     ./environment/dwl.nix
     ./programs
     ./terminal
@@ -21,6 +22,14 @@
       terminal = true;
       exec = "nvim";
       mimeType = ["text/plain"];
+    };
+    sxiv = {
+      type = "Application";
+      name = "sxiv";
+      comment = "Simple X Image Viewer";
+      exec = "sxiv -a %F";
+      terminal = false;
+      mimeType = ["image/jpeg" "image/png" "image/gif" "image/webp" "image/svg"];
     };
   };
 
