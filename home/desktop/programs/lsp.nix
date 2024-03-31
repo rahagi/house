@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ lua-language-server nil ];
+  home.packages = with pkgs; [ 
+    lua-language-server 
+    nil 
+    alejandra
+  ];
 }
