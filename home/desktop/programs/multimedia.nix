@@ -1,10 +1,7 @@
 {pkgs, ...}: {
-  home.file = {
-    ".config/easyeffects/output" = {
-      source = ../../../config/easyeffects/output;
-      target = ".config/easyeffects/output";
-      recursive = true;
-    };
+  xdg.configFile."easyeffects/output" = {
+    source = ../../../config/easyeffects/output;
+    recursive = true;
   };
 
   services.easyeffects = {
