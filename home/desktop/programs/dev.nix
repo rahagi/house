@@ -5,5 +5,6 @@
     python3
     sops
     gitleaks
+    postman
   ];
 }
