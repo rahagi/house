@@ -9,5 +9,5 @@
     preset = "HD 58X";
   };
 
-  home.packages = with pkgs; [mpv];
+  home.packages = with pkgs; [mpv musescore];
 }
