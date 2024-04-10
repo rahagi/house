@@ -2,7 +2,7 @@
   imports = [
     ./mimeapps.nix
     ./environment/dwl.nix
-    ./programs
+    ./packages
     ./terminal
   ];
 

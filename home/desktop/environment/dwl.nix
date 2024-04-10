@@ -8,10 +8,10 @@
   cfg = config.desktopEnvironment;
 in {
   imports = [
-    ./file-manager/lf.nix
-    ./launcher/tofi.nix
-    ./notification/dunst.nix
-    ./utils
+    ../programs/file-manager/lf.nix
+    ../programs/launcher/tofi.nix
+    ../programs/notification/dunst.nix
+    ../programs/utils
   ];
 
   options.desktopEnvironment = {
