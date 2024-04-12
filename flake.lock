@@ -3,8 +3,8 @@
     "colors": {
       "flake": false,
       "locked": {
-        "lastModified": 1710327431,
-        "narHash": "sha256-Y6Sgs2F3FLYNPEevuu4iJtSnyiYctz7qQJCHS72AN9o=",
+        "lastModified": 1712848306,
+        "narHash": "sha256-X0kYI72geUvixgiWy7SdXHWLr8BErhh6wU14UJHy0nY=",
         "path": "/home/rhg/.cache/wal",
         "type": "path"
       },

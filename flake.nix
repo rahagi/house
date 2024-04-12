@@ -38,6 +38,21 @@
           }
         ];
       };
+      x260 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/x260
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.rhg = import ./hosts/x260/home;
+          }
+        ];
+      };
     };
   };
 }

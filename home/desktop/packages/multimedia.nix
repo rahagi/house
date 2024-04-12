@@ -9,5 +9,5 @@
     preset = "HD 58X";
   };
 
-  home.packages = with pkgs; [mpv musescore];
+  home.packages = with pkgs; [mpv musescore pavucontrol];
 }
