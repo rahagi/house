@@ -46,5 +46,6 @@
     dconf
     pamixer
     wlr-randr
+    wev
   ];
 }
