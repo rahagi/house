@@ -90,7 +90,7 @@
 
   programs.zsh = {
     enable = true;
-    enableCompletion = false;
+    enableCompletion = true;
     promptInit = "";
     enableGlobalCompInit = false;
     setOptions = [];
@@ -113,6 +113,26 @@
       defaultFonts = {
         monospace = ["MapleMono"];
       };
+    };
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
+
+  services.dnsmasq = {
+    enable = true;
+    settings = {
+      server = ["192.168.2.1" "/u.wu/10.147.17.34"];
     };
   };
 

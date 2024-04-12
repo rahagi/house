@@ -29,4 +29,8 @@
   home.packages = with pkgs; [
     (ctpv.overrideAttrs (prev: {patches = [../../../../patches/ctpv/chafa-polite-flag.patch];}))
   ];
+  xdg.configFile."ctpv" = {
+    source = ../../../../config/ctpv;
+    recursive = true;
+  };
 }

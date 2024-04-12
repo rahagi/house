@@ -7,3 +7,6 @@ switch-blackbox:
 
 switch-guinea-pig:
 	sudo nixos-rebuild switch --flake .#guinea-pig
+
+switch-x260:
+	sudo nixos-rebuild switch --flake .#x260

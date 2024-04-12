@@ -5,7 +5,7 @@
   config,
   ...
 }: let
-  cfg = config.desktopEnvironment;
+  cfg = config.desktopEnvironment.dwl;
 in {
   imports = [
     ../programs/file-manager/lf.nix
@@ -14,7 +14,7 @@ in {
     ../programs/utils
   ];
 
-  options.desktopEnvironment = {
+  options.desktopEnvironment.dwl = {
     dwl.configFile = lib.mkOption {
       description = ''
         Path to dwl's `config.h` file
