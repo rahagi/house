@@ -13,5 +13,6 @@
     pfetch-rs
     swappy
     sxiv
+    (pkgs.callPackage ../../../packages/pywalfox.nix {})
   ];
 }
