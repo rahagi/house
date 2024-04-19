@@ -45,7 +45,7 @@
     };
   };
 
-  home.file."./config/user-dirs.dirs".source = ../../config/user-dirs.dirs;
+  xdg.configFile."user-dirs.dirs".source = ../../config/user-dirs.dirs;
   home.file."scripts" = {
     source = ../../tools/scripts;
     recursive = true;

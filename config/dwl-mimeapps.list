@@ -1,6 +1,0 @@
-[Default Applications]
-text/plain=nvim.desktop
-text/json=nvim.desktop
-application/json=nvim.desktop
-application/yaml=nvim.desktop
-

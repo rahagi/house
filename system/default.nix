@@ -116,7 +116,7 @@
     };
   };
 
-  services.avahi = {
+  services.avahi.nssmdns4 = {
     enable = true;
     nssmdns = true;
     publish = {
