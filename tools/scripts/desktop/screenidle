@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+SCREEN_OFF_TIMEOUT_MS=300
+
+swayidle -w \
+	timeout "$SCREEN_OFF_TIMEOUT_MS" 'toggledisplay' \
+	  resume 'toggledisplay' \
+	before-sleep 'lockscreen' \

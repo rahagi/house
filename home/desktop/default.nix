@@ -10,7 +10,7 @@
     gtk.enable = true;
     package = pkgs.apple-cursor;
     name = "macOS-BigSur";
-    size = 16;
+    size = 14;
   };
 
   xdg.desktopEntries = {

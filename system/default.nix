@@ -6,6 +6,7 @@
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    ./security.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

@@ -27,6 +27,7 @@ static const char *const autostart[] = {
   "wallpaper", NULL,
   "startdunst", NULL,
   "easyeffectsd", NULL,
+  "screenidle", NULL,
   NULL /* terminate */
 };
 
@@ -136,6 +137,7 @@ static const Key keys[] = {
 	{ 0,                         XKB_KEY_Print,      spawn,          SHCMD("screenshot --selective-clipboard") },
 	{ MODKEY,                    XKB_KEY_Print,      spawn,          SHCMD("screenshot --selective") },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Print,      spawn,          SHCMD("screenshot --all") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_L,          spawn,          SHCMD("lockscreen") },
 	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
