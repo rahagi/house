@@ -13,6 +13,8 @@
     pfetch-rs
     swappy
     sxiv
+    swayidle
+    swaylock
     (pkgs.callPackage ../../../packages/pywalfox.nix {})
   ];
 }

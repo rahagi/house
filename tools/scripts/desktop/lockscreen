@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+BACKGROUND="$(mktemp --suffix=.jpg)"
+
+grim - | convert - -filter Gaussian -resize 20% -define "filter:sigma=1.5" -resize 500% "$BACKGROUND"
+
+swaylock --font monospace --daemonize --image "$BACKGROUND" --scaling fill
