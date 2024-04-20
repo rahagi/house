@@ -5,5 +5,6 @@
     alejandra
     nodePackages_latest.vscode-json-languageserver
     stylua
+    marksman
   ];
 }
