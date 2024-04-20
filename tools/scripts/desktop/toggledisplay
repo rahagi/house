@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
 for output in $(wlr-randr | grep -e '^[^[:space:]]\+' | cut -d ' ' -f 1); do 
-  echo "$output"
   wlr-randr --output "$output" --toggle
 done
