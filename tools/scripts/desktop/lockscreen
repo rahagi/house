@@ -2,6 +2,13 @@
 
 BACKGROUND="$(mktemp --suffix=.jpg)"
 
-grim - | convert - -filter Gaussian -resize 20% -define "filter:sigma=1.5" -resize 500% "$BACKGROUND"
+grim - | convert - \
+  -filter Gaussian \
+  -resize 20% \
+  -define "filter:sigma=1.5" \
+  -resize 500% \
+  -fill black \
+  -colorize 40% \
+  "$BACKGROUND"
 
-swaylock --font monospace --daemonize --image "$BACKGROUND" --scaling fill
+chayang -d 0.25 && swaylock --font monospace --daemonize --image "$BACKGROUND" --scaling fill

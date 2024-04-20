@@ -15,6 +15,7 @@
     sxiv
     swayidle
     swaylock
+    chayang
     (pkgs.callPackage ../../../packages/pywalfox.nix {})
   ];
 }

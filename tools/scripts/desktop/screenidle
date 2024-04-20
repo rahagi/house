@@ -3,6 +3,6 @@
 SCREEN_OFF_TIMEOUT_MS=300
 
 swayidle -w \
-	timeout "$SCREEN_OFF_TIMEOUT_MS" 'toggledisplay' \
+	timeout "$SCREEN_OFF_TIMEOUT_MS" 'chayang -d 1 && toggledisplay' \
 	  resume 'toggledisplay' \
 	before-sleep 'lockscreen' \
