@@ -6,6 +6,8 @@
     sops
     gitleaks
     postman
+    mkcert
+    nss
     android-tools
   ];
 }
