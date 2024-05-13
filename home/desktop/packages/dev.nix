@@ -6,5 +6,6 @@
     sops
     gitleaks
     postman
+    android-tools
   ];
 }
