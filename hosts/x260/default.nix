@@ -25,8 +25,11 @@
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 90;
 
-      START_CHARGE_THRESH_BAT1 = 40;
+      START_CHARGE_THRESH_BAT1 = 60;
       STOP_CHARGE_THRESH_BAT1 = 90;
     };
   };
+
+  # virtualisation: waydroid
+  virtualisation.waydroid.enable = true;
 }
