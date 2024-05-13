@@ -47,5 +47,6 @@
     pamixer
     wlr-randr
     wev
+    atool
   ];
 }
