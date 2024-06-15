@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+. "$HOME/.cache/wal/env-color"
+
+# config file with color values substituted
+# with value from env.
+CONFIG="$HOME/.config/yambar/config.yml"
+
+echo "$(envsubst < "$CONFIG")" > /tmp/yambar_config.yml
+yambar --config /tmp/yambar_config.yml
