@@ -29,6 +29,7 @@ static const char *const autostart[] = {
   "startdunst", NULL,
   "easyeffectsd", NULL,
   "screenidle", NULL,
+  "music-notif-daemon", NULL,
   NULL /* terminate */
 };
 
