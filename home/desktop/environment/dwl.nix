@@ -22,23 +22,17 @@ in {
       default = ../../../config/dwl/config.h;
     };
 
-    somebar.configFile = lib.mkOption {
+    yambar.configDir = lib.mkOption {
       description = ''
-        Path to somebar's `config.hpp` file
+        Path to yambar's config directory
       '';
-      default = ../../../config/somebar/config.hpp;
-    };
-
-    someblocks.configFile = lib.mkOption {
-      description = ''
-        Path to someblock's `blocks.h` file
-      '';
-      default = ../../../config/someblocks/blocks.h;
+      default = ../../../config/yambar;
     };
   };
 
   config = {
     home.packages = with pkgs; [
+      yambar
       ((dwl.overrideAttrs (prev: {
           patches = [
             ../../../patches/dwl/ipc.patch
@@ -59,24 +53,10 @@ in {
           '';
         }))
         .override {conf = cfg.dwl.configFile;})
-      ((somebar.overrideAttrs (prev: {
-          version = "master";
-          patches = [
-            ../../../patches/somebar/ipc.patch
-            ../../../patches/somebar/dwm-like-tag-indicator.patch
-          ];
-          src = fetchFromSourcehut {
-            owner = "~raphi";
-            repo = "somebar";
-            rev = "6572b98d697fef50473366bf4b598e66c0be3e54";
-            sha256 = "sha256-4s9tj5+lOkYjF5cuFRrR1R1S5nzqvZFq9SUAFuA8QXc=";
-          };
-          postPatch = ''
-            cp "${inputs.colors}/somebar-color.hpp" color.hpp
-          '';
-        }))
-        .override {conf = cfg.somebar.configFile;})
-      (pkgs.callPackage ../../../packages/someblocks.nix {conf = cfg.someblocks.configFile;})
     ];
+    xdg.configFile."yambar" = {
+      source = cfg.yambar.configDir;
+      recursive = true;
+    };
   };
 }
