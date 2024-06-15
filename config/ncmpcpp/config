@@ -1,0 +1,5 @@
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+allow_for_physical_item_deletion = "yes"
