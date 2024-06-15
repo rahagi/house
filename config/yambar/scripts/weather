@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "icon|string|"
+echo "temp|string|-"
+echo ""
+
 full_weather=$(weather)
 
 echo "icon|string|$(echo "$full_weather" | awk '{print substr($0, 1, 1)}')"

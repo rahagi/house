@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+dwlmsg -w > /tmp/dwl_info
