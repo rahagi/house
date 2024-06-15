@@ -48,5 +48,7 @@
     wlr-randr
     wev
     atool
+    wdisplays
+    jstest-gtk
   ];
 }
