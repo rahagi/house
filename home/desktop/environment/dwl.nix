@@ -33,19 +33,13 @@ in {
   config = {
     home.packages = with pkgs; [
       yambar
+      (pkgs.callPackage ../../../packages/dwlmsg.nix {})
       ((dwl.overrideAttrs (prev: {
-          patches = [
-            ../../../patches/dwl/ipc.patch
-            ../../../patches/dwl/vanitygaps.patch
-            ../../../patches/dwl/smartborders.patch
-            ../../../patches/dwl/zoomswap.patch
-            ../../../patches/dwl/autostart.patch
-            ../../../patches/dwl/opacity.patch
-          ];
-          src = fetchgit {
-            url = "https://codeberg.org/dwl/dwl";
-            rev = "v0.5";
-            hash = "sha256-U/vqGE1dJKgEGTfPMw02z5KJbZLWY1vwDJWnJxT8urM=";
+          src = fetchFromGitHub {
+            owner = "rahagi";
+            repo = "dwl";
+            rev = "v0.5.1";
+            sha256 = "sha256-cjWTvN8iWOHSRS9jboCNlYMzNUueyJmIhjS0cuAAWHk=";
           };
           postPatch = ''
             ${prev.postPatch}
