@@ -31,19 +31,36 @@ bar:
                     string: 
                       text: "{name}"
                       foreground: 999999aa
-                      on-click: sh -c "notify-send {name}"
+                      on-click: sh -c "dwlmsg -t {id}"
                   conditions:
                     selected:
                       string: 
                         text: "{name}"
                         deco: 
                           <<: *overline
-                        on-click: sh -c "notify-send {name}"
+                        on-click: sh -c "dwlmsg -t {id}"
                     ~empty:
                       string:
                         text: "{name}"
-                        on-click: sh -c "notify-send {name}"
-                    id == 0: {string: {text: "{layout}"}}
+                        on-click: sh -c "dwlmsg -t {id}"
+                    id == 0: 
+                      list:
+                        items:
+                          - string: 
+                              right-margin: 6
+                              text: "{layout}"
+                          - map:
+                              default:
+                                string: 
+                                  margin: 6
+                                  max: 15
+                                  text: "{title}"
+                                  deco:
+                                    background:
+                                      color: "${COLOR2_STRIP}ff"
+                              conditions:
+                                title == "":
+                                  empty: {}
 
   center:
     - mpd:

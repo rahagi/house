@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dwlmsg -w > /tmp/dwl_info &
+
 . "$HOME/.cache/wal/env-color"
 
 # config file with color values substituted
