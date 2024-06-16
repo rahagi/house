@@ -31,18 +31,24 @@ bar:
                     string: 
                       text: "{name}"
                       foreground: 999999aa
-                      on-click: sh -c "dwlmsg -t {id}"
+                      on-click: sh -c "dwlmsg -t $(({id}-1))"
                   conditions:
+                    urgent:
+                      string: 
+                        text: "{name}"
+                        deco: 
+                          background:
+                            color: dd0000ff
                     selected:
                       string: 
                         text: "{name}"
                         deco: 
                           <<: *overline
-                        on-click: sh -c "dwlmsg -t {id}"
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
                     ~empty:
                       string:
                         text: "{name}"
-                        on-click: sh -c "dwlmsg -t {id}"
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
                     id == 0: 
                       list:
                         items:
@@ -53,7 +59,7 @@ bar:
                               default:
                                 string: 
                                   margin: 6
-                                  max: 15
+                                  max: 20
                                   text: "{title}"
                                   deco:
                                     background:
