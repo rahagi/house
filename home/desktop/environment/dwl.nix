@@ -38,8 +38,8 @@ in {
           src = fetchFromGitHub {
             owner = "rahagi";
             repo = "dwl";
-            rev = "v0.5.1";
-            sha256 = "sha256-cjWTvN8iWOHSRS9jboCNlYMzNUueyJmIhjS0cuAAWHk=";
+            rev = "v0.5.1b";
+            sha256 = "sha256-+jkyHDBp2+Qn/iAW7+CbBK0tWhTzxALMUHfmUgmiCTs=";
           };
           postPatch = ''
             ${prev.postPatch}

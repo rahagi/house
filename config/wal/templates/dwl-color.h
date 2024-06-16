@@ -7,5 +7,5 @@
 static const float rootcolor[]             = COLOR(0x{background.strip}ff);
 static const float bordercolor[]           = COLOR(0x{color8.strip}ff);
 static const float focuscolor[]            = COLOR(0x{color15.strip}ff);
-static const float urgentcolor[]           = COLOR(0xff0000ff);
+static const float urgentcolor[]           = COLOR(0xdd0000ff);
 

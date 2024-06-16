@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [firefox];
+  home.packages = with pkgs; [firefox ungoogled-chromium];
 }
