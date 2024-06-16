@@ -22,14 +22,14 @@ static const char *tags[] = {"᮰", "᮱", "᮲", "᮳", "᮴", "᮵", "᮶", "�
 
 /* Autostart */
 static const char *const autostart[] = {
+  "mpd", NULL,
   "dwlinfo", NULL,
-  "startyambar", NULL,
-  "someblocks", NULL,
   "wallpaper", NULL,
+  "screenidle", NULL,
   "startdunst", NULL,
   "easyeffectsd", NULL,
-  "screenidle", NULL,
   "music-notif-daemon", NULL,
+  "startyambar", NULL,
   NULL /* terminate */
 };
 

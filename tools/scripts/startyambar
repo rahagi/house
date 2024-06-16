@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sleep 1s
+
 . "$HOME/.cache/wal/env-color"
 
 # config file with color values substituted

@@ -50,5 +50,6 @@
     atool
     wdisplays
     jstest-gtk
+    unixtools.xxd
   ];
 }

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sleep 1s
+
 [ "$(pgrep -f "$0")" != "$$" ] && exit 1;
 
 FORMAT='[[%artist%] - [%title%]#|[%file%]]'
