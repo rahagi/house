@@ -33,12 +33,6 @@ bar:
                       foreground: 999999aa
                       on-click: sh -c "dwlmsg -t $(({id}-1))"
                   conditions:
-                    urgent:
-                      string: 
-                        text: "{name}"
-                        deco: 
-                          background:
-                            color: dd0000ff
                     selected:
                       string: 
                         text: "{name}"
@@ -118,12 +112,12 @@ bar:
               muted && (type == "sink"): 
                 string: 
                   text: "{cubic_volume}%"
-                  foreground: 999999ff
+                  foreground: 999999aa
                   <<: *on-click-sink
               muted && (type == "source"): 
                 string: 
                   text: "{cubic_volume}%"
-                  foreground: 999999ff
+                  foreground: 999999aa
                   <<: *on-click-source
               ~muted && (type == "sink"): 
                 string: 
@@ -155,7 +149,6 @@ bar:
                   right-margin: 12
                   <<: *volume
     - network:
-        name: "wlp4s0"
         content:
           list:
             items:
