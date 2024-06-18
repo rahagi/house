@@ -116,3 +116,5 @@ cheat() {
 
 # other inits
 source "$HOME"/.zprofile
+eval "$(direnv hook zsh)"
+
