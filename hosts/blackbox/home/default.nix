@@ -1,5 +1,6 @@
 {config, ...}: {
   imports = [
+    ./packages.nix
     ../../../home
   ];
 
