@@ -53,6 +53,21 @@
           }
         ];
       };
+      blackbox = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/blackbox
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.rhg = import ./hosts/blackbox/home;
+          }
+        ];
+      };
     };
   };
 }

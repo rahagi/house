@@ -38,6 +38,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
   environment.systemPackages = with pkgs; [
     neovim
     wget
@@ -52,6 +53,11 @@
     cmake
     pkg-config
     nix-prefetch-scripts
+
+    fuse3
+    exfat
+    exfatprogs
+    ntfs3g
   ];
 
   security.rtkit.enable = true;
