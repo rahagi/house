@@ -21,6 +21,7 @@
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;
 
+  users.users.rhg.extraGroups = ["corectrl"];
   programs.corectrl = {
     enable = true;
     gpuOverclock = {
