@@ -1,7 +1,7 @@
 {
   pkgs ? import <nixpkgs> {},
   lib ? pkgs.lib,
-  fetchgit,
+  fetchgit ? pkgs.fetchgit,
 }:
 pkgs.stdenv.mkDerivation {
   pname = "dwlmsg";
