@@ -41,7 +41,6 @@
     usbutils
     xdg-utils
     xdg-user-dirs
-    xdg-desktop-portal
     dbus
     dconf
     pamixer
