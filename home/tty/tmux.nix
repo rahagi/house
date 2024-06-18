@@ -15,7 +15,8 @@
     clock24 = true;
     keyMode = "vi";
     mouse = true;
-    terminal = "screen-256color";
+    # terminal = "screen-256color";
+    terminal = "tmux-256color";
     plugins = with pkgs; [tmuxPlugins.resurrect tmuxPlugins.sensible];
     extraConfig = ''
       set -g status-style 'bg=#333333'

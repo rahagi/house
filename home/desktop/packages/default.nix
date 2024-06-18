@@ -7,5 +7,6 @@
     ./multimedia.nix
     ./social.nix
     ./utils.nix
+    ./games.nix
   ];
 }

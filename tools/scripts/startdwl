@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export XDG_CURRENT_DESKTOP=dwl
+export XDG_CURRENT_DESKTOP=sway
 
 dbus-launch dwl > /tmp/dwl_info
 
