@@ -1,0 +1,165 @@
+# TODO: this is an absolute mess i should refactor this someday xd
+# TODO: this is an absolute mess i should refactor this someday xd
+# TODO: this is an absolute mess i should refactor this someday xd
+# TODO: this is an absolute mess i should refactor this someday xd
+# TODO: this is an absolute mess i should refactor this someday xd
+# TODO: this is an absolute mess i should refactor this someday xd
+siji: &siji "Siji:size=9"
+overline: &overline
+  overline: 
+    size: 3
+    color: "${COLOR2_STRIP}ff"
+
+bar:
+  font: monospace:size=14
+  height: 26
+  location: top
+  background: "${COLOR_BACKGROUND_STRIP}ff"
+  foreground: "${COLOR_FOREGROUND_STRIP}ff"
+
+  left:
+    - dwl:
+        number-of-tags: 9
+        name-of-tags: ["᮰", "᮱", "᮲", "᮳", "᮴", "᮵", "᮶", "᮷", "᮸"]
+        dwl-info-filename: "/tmp/dwl_info"
+        content:
+          list:
+            items:
+              - map:
+                  margin: 6
+                  default: 
+                    string: 
+                      text: "{name}"
+                      foreground: 999999aa
+                      on-click: sh -c "dwlmsg -t $(({id}-1))"
+                  conditions:
+                    selected:
+                      string: 
+                        text: "{name}"
+                        deco: 
+                          <<: *overline
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
+                    ~empty:
+                      string:
+                        text: "{name}"
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
+                    id == 0: 
+                      list:
+                        items:
+                          - string: 
+                              right-margin: 6
+                              text: "{layout}"
+                          - map:
+                              default:
+                                string: 
+                                  margin: 6
+                                  max: 20
+                                  text: "{title}"
+                                  deco:
+                                    background:
+                                      color: "${COLOR2_STRIP}ff"
+                              conditions:
+                                title == "":
+                                  empty: {}
+
+  center:
+    - mpd:
+        host: 127.0.0.1
+        port: 6600
+        content:
+          list:
+            items:
+              - string: 
+                  text: " "
+                  font: *siji
+                  on-click: sh -c "mpc prev"
+              - map:
+                  conditions:
+                    random: {string: {text: "", font: *siji}}
+              - string: 
+                  text: "{artist} - {title}"
+                  max: 42
+                  on-click:
+                    left: sh -c "mpc toggle"
+                    middle: sh -c "mpc random"
+                    wheel-up: sh -c "mpc volume +5"
+                    wheel-down: sh -c "mpc volume -5"
+              - string: 
+                  text: " "
+                  font: *siji
+                  on-click: sh -c "mpc next"
+  right:
+    - script:
+        path: "~/.config/yambar/scripts/weather"
+        poll-interval: 60000
+        content:
+          - string: {text: "{icon}", font: *siji}
+          - string: {text: "{temp}", right-margin: 12}
+    - pipewire:
+        anchors:
+          on-click-sink: &on-click-sink
+            on-click: 
+              left: sh -c "pamixer -t"
+              wheel-up: sh -c "pamixer -i 10 --allow-boost"
+              wheel-down: sh -c "pamixer -d 10 --allow-boost"
+          on-click-source: &on-click-source
+            on-click: 
+              left: sh -c "pamixer --source {name} -t"
+              wheel-up: sh -c "pamixer --source {name} -i 10 --allow-boost"
+              wheel-down: sh -c "pamixer --source {name} -d 10 --allow-boost"
+          volume: &volume
+            conditions:
+              muted && (type == "sink"): 
+                string: 
+                  text: "{cubic_volume}%"
+                  foreground: 999999aa
+                  <<: *on-click-sink
+              muted && (type == "source"): 
+                string: 
+                  text: "{cubic_volume}%"
+                  foreground: 999999aa
+                  <<: *on-click-source
+              ~muted && (type == "sink"): 
+                string: 
+                  text: "{cubic_volume}%"
+                  <<: *on-click-sink
+              ~muted && (type == "source"): 
+                string: 
+                  text: "{cubic_volume}%"
+                  <<: *on-click-source
+        content:
+          list:
+            items:
+              - map:
+                  conditions:
+                    type == "sink":
+                      - ramp:
+                          <<: *on-click-sink
+                          tag: cubic_volume
+                          items:
+                            - string: {text: "", font: *siji}
+                            - string: {text: "", font: *siji}
+                            - string: {text: "", font: *siji} 
+                    type == "source":
+                      - string: 
+                          text: ""
+                          font: *siji
+                          <<: *on-click-source
+              - map:
+                  right-margin: 12
+                  <<: *volume
+    - network:
+        content:
+          list:
+            items:
+              - map:
+                  right-margin: 12
+                  conditions:
+                    name == "enp5s0":
+                      - string: {text: "", font: *siji}
+                      - string: {text: "{ipv4}"}
+    - clock:
+        date-format: "%a %d/%m/%Y"
+        content:
+          - string: {text: , font: *siji}
+          - string: {text: "{date} {time}"}

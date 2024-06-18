@@ -3,7 +3,7 @@
     ../../../home
   ];
 
-  # config.desktopEnvironment.dwl = {
-  #   someblocks.configFile = ../config/someblocks/blocks.h;
-  # };
+  config.desktopEnvironment.dwl = {
+    yambar.configDir = ../config/yambar;
+  };
 }

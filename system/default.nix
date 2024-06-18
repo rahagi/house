@@ -52,6 +52,11 @@
     cmake
     pkg-config
     nix-prefetch-scripts
+
+    fuse3
+    exfat
+    exfatprogs
+    ntfs3g
   ];
 
   security.rtkit.enable = true;
