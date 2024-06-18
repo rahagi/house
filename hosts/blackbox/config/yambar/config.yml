@@ -53,7 +53,7 @@ bar:
                               default:
                                 string: 
                                   margin: 6
-                                  max: 20
+                                  max: 40
                                   text: "{title}"
                                   deco:
                                     background:
@@ -91,7 +91,7 @@ bar:
   right:
     - script:
         path: "~/.config/yambar/scripts/weather"
-        poll-interval: 60000
+        poll-interval: 600000
         content:
           - string: {text: "{icon}", font: *siji}
           - string: {text: "{temp}", right-margin: 12}
