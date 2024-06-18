@@ -11,6 +11,8 @@
 
   networking.hostName = "blackbox";
 
+  users.users.rhg.extraGroups = ["corectrl" "docker"];
+
   hardware.opengl = {
     driSupport = true;
     driSupport32Bit = true;
@@ -18,10 +20,16 @@
     extraPackages = [pkgs.amdvlk];
     extraPackages32 = [pkgs.driversi686Linux.amdvlk];
   };
+
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;
-
-  users.users.rhg.extraGroups = ["corectrl"];
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
   programs.corectrl = {
     enable = true;
     gpuOverclock = {

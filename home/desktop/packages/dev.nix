@@ -15,5 +15,6 @@
     mkcert
     nss
     android-tools
+    dbeaver-bin
   ];
 }
