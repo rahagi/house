@@ -134,6 +134,7 @@
     enable = true;
     settings = {
       server = ["192.168.2.1" "/u.wu/10.147.17.34"];
+      bind-interfaces = true;
     };
   };
 
