@@ -17,5 +17,6 @@
     swaylock
     chayang
     (pkgs.callPackage ../../../packages/pywalfox.nix {})
+    wljoywake
   ];
 }
