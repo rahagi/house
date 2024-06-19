@@ -16,4 +16,5 @@ while true; do
     pkill -f 'dwlmsg -w'
     dumpit &
   fi
+  sleep 0.3s
 done
