@@ -50,5 +50,6 @@
     wdisplays
     jstest-gtk
     unixtools.xxd
+    nvtopPackages.full
   ];
 }
