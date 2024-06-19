@@ -9,6 +9,10 @@ overline: &overline
   overline: 
     size: 3
     color: "${COLOR2_STRIP}ff"
+overline-urgent: &overline-urgent
+  overline: 
+    size: 3
+    color: "${COLOR_FOREGROUND_STRIP}ff"
 
 bar:
   font: monospace:size=14
@@ -33,16 +37,6 @@ bar:
                       foreground: 999999aa
                       on-click: sh -c "dwlmsg -t $(({id}-1))"
                   conditions:
-                    selected:
-                      string: 
-                        text: "{name}"
-                        deco: 
-                          <<: *overline
-                        on-click: sh -c "dwlmsg -t $(({id}-1))"
-                    ~empty:
-                      string:
-                        text: "{name}"
-                        on-click: sh -c "dwlmsg -t $(({id}-1))"
                     id == 0: 
                       list:
                         items:
@@ -53,7 +47,7 @@ bar:
                               default:
                                 string: 
                                   margin: 6
-                                  max: 20
+                                  max: 40
                                   text: "{title}"
                                   deco:
                                     background:
@@ -61,6 +55,23 @@ bar:
                               conditions:
                                 title == "":
                                   empty: {}
+                    urgent:
+                      string: 
+                        text: "{name}"
+                        deco: 
+                          <<: *overline-urgent
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
+                    selected:
+                      string: 
+                        text: "{name}"
+                        deco: 
+                          <<: *overline
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
+                    ~empty:
+                      string:
+                        text: "{name}"
+                        on-click: sh -c "dwlmsg -t $(({id}-1))"
+
 
   center:
     - mpd:

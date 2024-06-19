@@ -20,6 +20,8 @@ pkgs.stdenv.mkDerivation {
     pkgs.wayland-scanner
   ];
 
+  patches = [../patches/dwlmsg/fix-urgent-state.patch];
+
   outputs = ["out"];
 
   makeFlags = [

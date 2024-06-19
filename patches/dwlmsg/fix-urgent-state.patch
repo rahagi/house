@@ -1,0 +1,24 @@
+From 7ec93c2182048dd3a23aa2ce59c37feffb3ca2f2 Mon Sep 17 00:00:00 2001
+From: Rahagi Ahnaf Saidani <rahagi@protonmail.com>
+Date: Wed, 19 Jun 2024 16:26:19 +0700
+Subject: [PATCH] fix: urgent state
+
+---
+ dwlmsg.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dwlmsg.c b/dwlmsg.c
+index d1f897b..e13fa50 100644
+--- a/dwlmsg.c
++++ b/dwlmsg.c
+@@ -105,7 +105,7 @@ dwl_ipc_output_tag(void *data, struct zdwl_ipc_output_v2 *dwl_ipc_output,
+ {
+ 	if (!tflag) return;
+ 	if (state != ZDWL_IPC_OUTPUT_V2_TAG_STATE_NONE) seltags |= 1<<tag;
+-	if (state == ZDWL_IPC_OUTPUT_V2_TAG_STATE_ACTIVE) urg |= 1<<tag;
++	if (state == ZDWL_IPC_OUTPUT_V2_TAG_STATE_URGENT) urg |= 1<<tag;
+ 	if (clients > 0) occ |= 1<<tag;
+ 	if (!(mode & GET)) return;
+ 	char *output_name = data;
+-- 
+2.45.1
