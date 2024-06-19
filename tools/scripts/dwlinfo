@@ -1,3 +1,19 @@
 #!/usr/bin/env bash
 
-dwlmsg -w > /tmp/dwl_info
+MAX_FILE_SIZE=102400
+DUMP_FILE=/tmp/dwl_info
+
+dumpit() {
+  dwlmsg -w > "$DUMP_FILE"
+}
+
+dumpit &
+sleep 1
+
+while true; do
+  curr=$(stat -c%s "$DUMP_FILE")
+  if [[ $curr -ge $MAX_FILE_SIZE ]]; then
+    pkill -f 'dwlmsg -w'
+    dumpit &
+  fi
+done
