@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# script to sessionize my work directories
+# usage: kerja [-hpH]
+
+SRC_DIR="$HOME/src"
+PERSONAL_DIR="$SRC_DIR/personal"
+WORK_DIR="$SRC_DIR/work"
+
+usage() {
+  echo "sessionize my work directories"
+  echo ""
+  echo "usage: $0 [-hpH]"
+  echo "  -h  show this help message"
+  echo "  -p  sessionize personal directories"
+  echo "  -H  sessionize house (nix config) directory"
+}
+
+sessionize() {
+  tmux new -s "$1" -d -c "$2"
+  tmux switch-client -t "$1"
+}
+
+case "$1" in
+  -h)
+    usage
+    exit 0;
+    ;;
+  -p)
+    project_dir=$(find "$PERSONAL_DIR" -maxdepth 1 | fzf)
+    ;;
+  -H)
+    sessionize "house" "$HOME/house"
+    exit 0
+    ;;
+  *)
+    project_dir=$(find "$WORK_DIR" -maxdepth 2 | fzf)
+    ;;
+esac
+project_name=$(basename "$project_dir")
+
+[ -z "$project_dir" ] && exit 0
+
+sessionize "$project_name" "$project_dir"
