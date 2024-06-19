@@ -16,5 +16,6 @@
     nss
     android-tools
     dbeaver-bin
+    wireguard-tools
   ];
 }
