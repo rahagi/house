@@ -8,5 +8,6 @@
     ./social.nix
     ./utils.nix
     ./games.nix
+    ./office.nix
   ];
 }

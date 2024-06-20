@@ -84,6 +84,7 @@ bindkey -s "^T" "st 2> /dev/null& disown %st\n"
 bindkey -s "^f" "fg\n"
 bindkey -s "^r" "fuzzy_history\n"
 bindkey -s "^k" "kerja\n"
+bindkey -s "^h" "kerja -H\n"
 
 # custom function(s)
 lfcd() {
