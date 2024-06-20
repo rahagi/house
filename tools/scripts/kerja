@@ -17,7 +17,7 @@ usage() {
 
 sessionize() {
   tmux new -s "$1" -d -c "$2"
-  tmux switch-client -t "$1"
+  [ -z "$TMUX" ] && tmux attach-session -t "$1" || tmux switch-client -t "$1"
 }
 
 case "$1" in
