@@ -14,10 +14,26 @@
     recursive = true;
   };
 
+  xdg.configFile."mpv" = {
+    source = ../../../config/mpv;
+    recursive = true;
+  };
+
   services.easyeffects = {
     enable = true;
     preset = "HD 58X";
   };
 
-  home.packages = with pkgs; [mpv musescore pavucontrol mpd ncmpcpp mpc-cli];
+  home.packages = with pkgs; [
+    mpv
+    musescore
+    pavucontrol
+    mpd
+    ncmpcpp
+    mpc-cli
+    ffmpeg
+    libvpx
+    libvorbis
+    obs
+  ];
 }
