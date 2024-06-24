@@ -75,6 +75,9 @@
   sops.secrets.zerotier-network-id = {};
   services.zerotierone = {
     enable = true;
+    localConf = {
+      settings = {softwareUpdate = "disable";};
+    };
   };
   systemd.services.join-zerotier-network = {
     description = "Join ZeroTier Network";
@@ -104,7 +107,10 @@
   };
   users.defaultUserShell = pkgs.zsh;
 
-  hardware.opengl.enable = true;
+  hardware.graphics= {
+    enable = true;
+    enable32Bit = true;
+  };
 
   fonts = {
     packages = with pkgs; [
