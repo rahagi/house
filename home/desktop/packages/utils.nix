@@ -51,5 +51,6 @@
     jstest-gtk
     unixtools.xxd
     nvtopPackages.full
+    cloudflare-warp
   ];
 }
