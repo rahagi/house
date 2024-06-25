@@ -137,8 +137,8 @@ static const char *termcmd[] = { "wezterm", NULL };
 static const Key keys[] = {
   /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
   /* modifier                  key                 function        argument */
-  { MODKEY,                    XKB_KEY_d,          spawn,          SHCMD("tofi-run | xargs sh -c") },
-  { MODKEY,                    XKB_KEY_D,          spawn,          SHCMD("tofi-run | xargs sh -c") },
+  { MODKEY,                    XKB_KEY_d,          spawn,          SHCMD("tofi-run | xargs -I _ sh -c '_'") },
+  { MODKEY,                    XKB_KEY_D,          spawn,          SHCMD("tofi-run | xargs -I _ sh -c '_'") },
   { 0,                         XKB_KEY_Print,      spawn,          SHCMD("screenshot --selective-clipboard") },
   { MODKEY,                    XKB_KEY_Print,      spawn,          SHCMD("screenshot --selective") },
   { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Print,      spawn,          SHCMD("screenshot --all") },

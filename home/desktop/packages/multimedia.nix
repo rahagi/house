@@ -34,6 +34,6 @@
     ffmpeg
     libvpx
     libvorbis
-    obs
+    obs-studio
   ];
 }
