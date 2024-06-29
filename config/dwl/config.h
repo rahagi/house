@@ -25,7 +25,6 @@ static const char *const autostart[] = {
   "mpd", NULL,
   "dwlinfo", NULL,
   "wallpaper", NULL,
-  "screenidle", NULL,
   "startdunst", NULL,
   "easyeffectsd", NULL,
   "music-notif-daemon", NULL,
