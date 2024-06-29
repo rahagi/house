@@ -14,8 +14,8 @@
   users.users.rhg.extraGroups = ["corectrl" "docker"];
 
   hardware.graphics = {
-    extraPackages = [pkgs.amdvlk];
-    extraPackages32 = [pkgs.driversi686Linux.amdvlk];
+    extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl vaapiVdpau];
+    extraPackages32 = [pkgs.driversi686Linux.mesa.drivers];
   };
 
   # virtualisation: waydroid

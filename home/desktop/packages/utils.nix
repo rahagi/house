@@ -52,5 +52,6 @@
     unixtools.xxd
     nvtopPackages.full
     cloudflare-warp
+    libdrm
   ];
 }
