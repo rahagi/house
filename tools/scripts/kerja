@@ -16,8 +16,9 @@ usage() {
 }
 
 sessionize() {
-  tmux new -s "$1" -d -c "$2"
-  [ -z "$TMUX" ] && tmux attach-session -t "$1" || tmux switch-client -t "$1"
+  session_name=$(echo "$1" | sed 's|\.|_|g')
+  tmux new -s "$session_name" -d -c "$2"
+  [ -z "$TMUX" ] && tmux attach-session -t "$session_name" || tmux switch-client -t "$session_name"
 }
 
 case "$1" in
