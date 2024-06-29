@@ -24,6 +24,13 @@
     preset = "HD 58X";
   };
 
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs; [
+      obs-studio-plugins.obs-vaapi
+    ];
+  };
+
   home.packages = with pkgs; [
     mpv
     musescore
@@ -34,6 +41,5 @@
     ffmpeg
     libvpx
     libvorbis
-    obs-studio
   ];
 }
