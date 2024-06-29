@@ -17,7 +17,6 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = with config.boot.kernelPackages; [zenpower];
   boot.blacklistedKernelModules = ["k10temp"];
-  # boot.kernelParams = ["amdgpu.ppfeaturemask=0xffffffff"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/a59d7f8a-8c4e-4f81-a505-3401bcc813ba";
@@ -34,7 +33,7 @@
   fileSystems."/mnt/windog" = {
     device = "/dev/disk/by-uuid/FAAC0206AC01BDDF";
     fsType = "ntfs-3g";
-    options = ["nofail"];
+    options = ["nofail" "users"];
   };
 
   fileSystems."/boot" = {
