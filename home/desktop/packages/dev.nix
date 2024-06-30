@@ -17,5 +17,6 @@
     android-tools
     dbeaver-bin
     wireguard-tools
+    nodejs
   ];
 }
