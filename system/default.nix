@@ -107,7 +107,7 @@
   };
   users.defaultUserShell = pkgs.zsh;
 
-  hardware.graphics= {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
@@ -150,10 +150,13 @@
     };
   };
 
-  services.udev.extraRules = ''
-    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="plugdev"
-  '';
+  services.udev = {
+    packages = with pkgs; [game-devices-udev-rules];
+    extraRules = ''
+      SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="plugdev"
+    '';
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

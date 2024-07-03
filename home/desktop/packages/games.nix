@@ -4,6 +4,7 @@
     gamescope
     gamemode
     mangohud
+    protontricks
     osu-lazer-bin
   ];
 }
