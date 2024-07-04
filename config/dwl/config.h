@@ -2,7 +2,7 @@
 
 /* appearance */
 static const int sloppyfocus               = 1; /* focus follows mouse */
-static const int bypass_surface_visibility = 0; /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
+static const int bypass_surface_visibility = 1; /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
 static const int smartgaps                 = 1; /* 1 means no outer gap when there is only one window */
 static const int smartborders              = 1;
 static const int monoclegaps               = 0; /* 1 means outer gaps in monocle layout */
@@ -22,12 +22,11 @@ static const char *tags[] = {"᮰", "᮱", "᮲", "᮳", "᮴", "᮵", "᮶", "�
 
 /* Autostart */
 static const char *const autostart[] = {
-  "mpd", NULL,
+  "musicd", NULL,
   "dwlinfo", NULL,
   "wallpaper", NULL,
   "startdunst", NULL,
   "easyeffectsd", NULL,
-  "music-notif-daemon", NULL,
   "startyambar", NULL,
   NULL /* terminate */
 };

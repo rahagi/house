@@ -41,5 +41,6 @@
     ffmpeg
     libvpx
     libvorbis
+    mpdscribble
   ];
 }

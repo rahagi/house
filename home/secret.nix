@@ -9,4 +9,6 @@
   sops.secrets.private-gpg-keys = {};
   sops.secrets.public-gpg-keys = {};
   sops.secrets.ssh-config = {};
+  sops.secrets.lastfm-username = {};
+  sops.secrets.lastfm-password = {};
 }
