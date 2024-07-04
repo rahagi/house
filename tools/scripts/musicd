@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mpd && sleep 0.5
+mpdscribble
+music-notif-daemon &

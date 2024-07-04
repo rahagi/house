@@ -15,7 +15,7 @@
 
   hardware.graphics = {
     extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl vaapiVdpau];
-    extraPackages32 = [pkgs.driversi686Linux.mesa.drivers];
+    extraPackages32 = with pkgs; [driversi686Linux.mesa.drivers];
   };
 
   # virtualisation: waydroid
