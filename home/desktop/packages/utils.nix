@@ -53,5 +53,6 @@
     nvtopPackages.full
     cloudflare-warp
     libdrm
+    vulkan-tools
   ];
 }
