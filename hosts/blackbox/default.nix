@@ -13,10 +13,10 @@
 
   users.users.rhg.extraGroups = ["corectrl" "docker"];
 
-  hardware.graphics = {
-    extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl vaapiVdpau];
-    extraPackages32 = with pkgs; [driversi686Linux.mesa.drivers];
-  };
+  boot.kernelParams = ["video=DP-3:1920x1080@165"];
+
+  chaotic.mesa-git.enable = true;
+  chaotic.hdr.enable = true;
 
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;

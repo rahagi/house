@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +20,7 @@
 
   outputs = inputs @ {
     nixpkgs,
+    chaotic,
     home-manager,
     ...
   }: {
@@ -58,6 +60,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/blackbox
+          chaotic.nixosModules.default
 
           home-manager.nixosModules.home-manager
           {
