@@ -18,5 +18,6 @@
     dbeaver-bin
     wireguard-tools
     nodejs
+    devenv
   ];
 }

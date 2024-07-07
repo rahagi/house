@@ -30,4 +30,6 @@ export OPENER=xdg-open
 
 export PF_INFO="ascii title os kernel uptime wm shell editor cpu"
 
+export GTK_USE_PORTAL=1
+
 . "$HOME/.cache/wal/env-color"
