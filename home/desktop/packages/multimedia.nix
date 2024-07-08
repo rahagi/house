@@ -31,8 +31,19 @@
     ];
   };
 
+  programs.mpv = {
+    enable = true;
+    scripts = with pkgs.mpvScripts; [
+      autoload
+      modernx-zydezu
+      mpris
+      thumbfast
+      videoclip
+      webtorrent-mpv-hook
+    ];
+  };
+
   home.packages = with pkgs; [
-    mpv
     musescore
     pavucontrol
     mpd
