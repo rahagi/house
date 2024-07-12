@@ -10,6 +10,7 @@
   ];
 
   networking.hostName = "blackbox";
+  networking.firewall.enable = false;
 
   users.users.rhg.extraGroups = ["corectrl" "docker"];
 
