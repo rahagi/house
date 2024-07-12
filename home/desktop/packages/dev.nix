@@ -6,8 +6,6 @@
   };
 
   home.packages = with pkgs; [
-    bun
-    gcc
     python3
     sops
     gitleaks
@@ -19,5 +17,8 @@
     wireguard-tools
     nodejs
     devenv
+    postgresql
+    zed-editor
+    biome
   ];
 }
