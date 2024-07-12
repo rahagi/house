@@ -51,6 +51,7 @@
     zerotierone
     openssl
     bc
+    inetutils
 
     gnumake
     cmake
