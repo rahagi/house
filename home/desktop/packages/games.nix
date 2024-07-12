@@ -6,5 +6,6 @@
     mangohud
     protontricks
     osu-lazer-bin
+    libstrangle
   ];
 }
