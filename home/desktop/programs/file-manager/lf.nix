@@ -6,6 +6,19 @@
     };
     keybindings = {
       D = "delete";
+      p = "paste; clear";
+
+      r = "";
+      i = "rename";
+      I = ":rename; cmd-home";
+      A = ":rename; cmd-end";
+      c = ":rename; cmd-delete-home";
+      C = ":rename; cmd-end; cmd-delete-home";
+
+      gh = ''$lf -remote "send $id cd $HOME"'';
+      gm = ''$lf -remote "send $id cd /mnt/"'';
+      gd = ''$lf -remote "send $id cd $HOME/downloads"'';
+
       "<f-7>" = ''push :mkdir<space>""<c-b>'';
       "<c-d>" = "!dragon -a $fx";
     };
@@ -23,6 +36,12 @@
         lf -remote "send $id quit"
       }}
       map q quit-and-cd
+
+      cmd extract &{{
+        set -f
+        atool -x $f
+      }}
+      map e extract
     '';
   };
 
