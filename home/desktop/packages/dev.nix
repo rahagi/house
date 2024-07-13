@@ -18,7 +18,5 @@
     nodejs
     devenv
     postgresql
-    zed-editor
-    biome
   ];
 }
