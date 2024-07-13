@@ -12,10 +12,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    colors = {
-      flake = false;
-      url = "/home/rhg/.cache/wal";
-    };
   };
 
   outputs = inputs @ {

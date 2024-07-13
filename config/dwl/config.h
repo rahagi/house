@@ -1,5 +1,3 @@
-#include "color.h"
-
 /* appearance */
 static const int sloppyfocus               = 1; /* focus follows mouse */
 static const int bypass_surface_visibility = 1; /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
@@ -14,6 +12,15 @@ static const unsigned int gappov           = 9; /* vert outer gap between window
 /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
 static const float default_opacity         = 1;
+
+static char* rootcolorenv = "COLOR_BACKGROUND";
+static char* bordercolorenv = "COLOR8";
+static char* focuscolorenv = "COLOR15";
+static char* urgentcolorenv = NULL;
+static float rootcolor[4];
+static float bordercolor[4];
+static float focuscolor[4];
+static float urgentcolor[4] = {0.9, 0.0, 0.0, 1.0};
 
 /* tagging - TAGCOUNT must be no greater than 31 */
 #define TAGCOUNT (9)
