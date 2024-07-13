@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   lib,
   config,
   ...
@@ -38,13 +37,9 @@ in {
           src = fetchFromGitHub {
             owner = "rahagi";
             repo = "dwl";
-            rev = "v0.5.1b";
-            sha256 = "sha256-+jkyHDBp2+Qn/iAW7+CbBK0tWhTzxALMUHfmUgmiCTs=";
+            rev = "v0.5.2";
+            sha256 = "sha256-GavZveyAxIHqJ0ubdZF3sZnbFxFqdYVAWjGJYeIYnus=";
           };
-          postPatch = ''
-            ${prev.postPatch}
-            cp "${inputs.colors}/dwl-color.h" color.h
-          '';
         }))
         .override {conf = cfg.dwl.configFile;})
     ];

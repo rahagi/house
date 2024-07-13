@@ -25,19 +25,6 @@
         "type": "github"
       }
     },
-    "colors": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1718643925,
-        "narHash": "sha256-5hGsj+w5kZ38injV7abWPqsaQ28SEKzgD1oqlTg9wEc=",
-        "path": "/home/rhg/.cache/wal",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/rhg/.cache/wal",
-        "type": "path"
-      }
-    },
     "compare-to": {
       "locked": {
         "lastModified": 1695341185,
@@ -203,7 +190,6 @@
     "root": {
       "inputs": {
         "chaotic": "chaotic",
-        "colors": "colors",
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_2",
         "sops-nix": "sops-nix"
