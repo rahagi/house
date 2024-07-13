@@ -35,4 +35,6 @@
       ppfeaturemask = "0xffffffff";
     };
   };
+
+  services.desktopManager.plasma6.enable = true;
 }
