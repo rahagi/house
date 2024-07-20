@@ -53,5 +53,6 @@
     libvpx
     libvorbis
     mpdscribble
+    anki
   ];
 }
