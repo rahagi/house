@@ -38,7 +38,7 @@ in {
             owner = "rahagi";
             repo = "dwl";
             rev = "v0.5.2";
-            sha256 = "sha256-GavZveyAxIHqJ0ubdZF3sZnbFxFqdYVAWjGJYeIYnus=";
+            sha256 = "sha256-NJ6IGyjVNLY0ph8jzSUUw5b3Y1jm7AyUfK85V7v5cYc=";
           };
         }))
         .override {conf = cfg.dwl.configFile;})
