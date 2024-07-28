@@ -65,6 +65,7 @@ alias ts="tmux new-session"
 alias ta="tmux attach"
 alias less="less -R"
 alias evcxr="evcxr --edit-mode=vi"
+alias ssh="TERM=xterm ssh"
 
 # enable vim keybinding
 bindkey -v
