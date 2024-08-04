@@ -157,7 +157,7 @@
   };
 
   services.udev = {
-    packages = with pkgs; [game-devices-udev-rules];
+    packages = with pkgs; [game-devices-udev-rules via qmk-udev-rules];
     extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
       SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="plugdev"

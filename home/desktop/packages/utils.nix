@@ -54,5 +54,6 @@
     cloudflare-warp
     libdrm
     vulkan-tools
+    via
   ];
 }
