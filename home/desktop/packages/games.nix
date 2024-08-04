@@ -7,5 +7,7 @@
     protontricks
     osu-lazer-bin
     libstrangle
+    wineWowPackages.staging
+    winetricks
   ];
 }
