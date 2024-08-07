@@ -49,12 +49,12 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
+      xdg-desktop-portal-kde
     ];
     config = {
       common = {
         default = "gtk";
-        "org.freedesktop.impl.portal.FileChooser" = "gtk";
+        "org.freedesktop.impl.portal.FileChooser" = "kde";
         "org.freedesktop.impl.portal.ScreenCast" = "wlr";
       };
     };

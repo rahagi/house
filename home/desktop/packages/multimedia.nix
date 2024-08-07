@@ -54,5 +54,6 @@
     libvorbis
     mpdscribble
     anki
+    gimp
   ];
 }
