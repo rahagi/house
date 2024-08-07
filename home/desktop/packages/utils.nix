@@ -55,5 +55,6 @@
     libdrm
     vulkan-tools
     via
+    qbittorrent
   ];
 }
