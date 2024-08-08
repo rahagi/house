@@ -56,5 +56,6 @@
     vulkan-tools
     via
     qbittorrent
+    unar
   ];
 }

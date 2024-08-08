@@ -19,54 +19,49 @@
     chaotic,
     home-manager,
     ...
-  }: {
-    nixosConfigurations = {
-      guinea-pig = nixpkgs.lib.nixosSystem {
+  }: let
+    hosts = [
+      {
+        name = "guinea-pig";
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/guinea-pig
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.rhg = import ./home;
-          }
-        ];
-      };
-      x260 = nixpkgs.lib.nixosSystem {
+        path = ./hosts/guinea-pig;
+        homePath = ./home;
+      }
+      {
+        name = "x260";
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/x260
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.rhg = import ./hosts/x260/home;
-          }
-        ];
-      };
-      blackbox = nixpkgs.lib.nixosSystem {
+        path = ./hosts/x260;
+        homePath = ./hosts/x260/home;
+      }
+      {
+        name = "blackbox";
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/blackbox
-          chaotic.nixosModules.default
+        path = ./hosts/blackbox;
+        homePath = ./hosts/blackbox/home;
+      }
+    ];
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.rhg = import ./hosts/blackbox/home;
-          }
-        ];
-      };
-    };
+    nixosConfigurations = builtins.listToAttrs (map (host: {
+        name = host.name;
+        value = nixpkgs.lib.nixosSystem {
+          system = host.system;
+          specialArgs = {inherit inputs;};
+          modules = [
+            host.path
+            chaotic.nixosModules.default
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {inherit inputs;};
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.rhg = import host.homePath;
+            }
+          ];
+        };
+      })
+      hosts);
+  in {
+    nixosConfigurations = nixosConfigurations;
   };
 }
