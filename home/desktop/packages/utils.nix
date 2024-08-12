@@ -57,5 +57,6 @@
     via
     qbittorrent
     unar
+    foot
   ];
 }
