@@ -51,6 +51,13 @@ static const Rule rules[] = {
   { "steam",       NULL,       1 << 5,       0,          default_opacity, -1 },
 };
 
+static const ForceTearingRule force_tearing[] = {
+  {.title = "", .appid = "osu!"},
+  {.title = "", .appid = "steam_app_1245620"}, // ELDEN RING
+  {.title = "", .appid = "Waydroid"},
+  {.title = "", .appid = "gamescope"},
+};
+
 /* layout(s) */
 static const Layout layouts[] = {
   /* symbol     arrange function */
