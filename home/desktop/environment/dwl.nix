@@ -34,14 +34,27 @@ in {
       yambar
       (pkgs.callPackage ../../../packages/dwlmsg.nix {})
       ((dwl.overrideAttrs (prev: {
+          buildInputs = [
+            libinput
+            libxkbcommon
+            pixman
+            wayland
+            wayland-protocols
+            wlroots_0_18
+
+            xwayland
+            xorg.libxcb
+            xorg.libX11
+            xorg.xcbutilwm
+          ];
           src = fetchFromGitHub {
             owner = "rahagi";
             repo = "dwl";
-            rev = "v0.5.2";
-            sha256 = "sha256-NJ6IGyjVNLY0ph8jzSUUw5b3Y1jm7AyUfK85V7v5cYc=";
+            rev = "v0.7.1-tearing";
+            sha256 = "sha256-sp88hlnnmnp2Ibrb8OlH8a54TDKWe4pgZ84lnKE4nD8=";
           };
         }))
-        .override {conf = cfg.dwl.configFile;})
+        .override {configH = cfg.dwl.configFile;})
     ];
     xdg.configFile."yambar" = {
       source = cfg.yambar.configDir;
