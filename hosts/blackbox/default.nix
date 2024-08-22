@@ -41,8 +41,6 @@
     };
   };
 
-  services.desktopManager.plasma6.enable = true;
-
   services.ollama = {
     enable = true;
     acceleration = "rocm";

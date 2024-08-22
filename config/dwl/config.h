@@ -54,6 +54,7 @@ static const Rule rules[] = {
 static const ForceTearingRule force_tearing[] = {
   {.title = "", .appid = "osu!"},
   {.title = "", .appid = "steam_app_1245620"}, // ELDEN RING
+  {.title = "", .appid = "steam_app_814380"},  // Sekiro
   {.title = "", .appid = "Waydroid"},
   {.title = "", .appid = "gamescope"},
 };
