@@ -5,9 +5,9 @@
     gamemode
     mangohud
     protontricks
-    osu-lazer-bin
     libstrangle
     wineWowPackages.staging
     winetricks
+    (pkgs.callPackage ../../../packages/osu-lazer-bin.nix {})
   ];
 }
