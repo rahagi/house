@@ -18,5 +18,6 @@
     nodejs
     devenv
     postgresql
+    openvpn
   ];
 }
