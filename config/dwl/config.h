@@ -45,7 +45,7 @@ static const Rule rules[] = {
   /* app_id     title       tags mask     isfloating   alpha           monitor */
   { "wezterm",     NULL,       0,            0,          0.85,            -1 },
   { "firefox",     NULL,       1 << 0,       0,          default_opacity, -1 },
-  { "discord",     NULL,       1 << 2,       0,          default_opacity, -1 },
+  { "discord",     "Discord",  1 << 2,       0,          default_opacity, -1 },
   { "chatterino",  NULL,       1 << 4,       0,          default_opacity, -1 },
   { "mpv",         NULL,       1 << 4,       0,          default_opacity, -1 },
   { "steam",       NULL,       1 << 5,       0,          default_opacity, -1 },
@@ -55,6 +55,7 @@ static const ForceTearingRule force_tearing[] = {
   {.title = "", .appid = "osu!"},
   {.title = "", .appid = "steam_app_1245620"}, // ELDEN RING
   {.title = "", .appid = "steam_app_814380"},  // Sekiro
+  {.title = "Counter-Strike 2", .appid = "SDL Application"},  // CS2
   {.title = "", .appid = "Waydroid"},
   {.title = "", .appid = "gamescope"},
 };
