@@ -47,6 +47,6 @@
     environmentVariables = {
       HSA_OVERRIDE_GFX_VERSION = "10.3.0";
     };
-    rocmOverrideGfx = "10.3.1";
+    rocmOverrideGfx = "10.3.0";
   };
 }
