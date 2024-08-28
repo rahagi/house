@@ -44,6 +44,7 @@ static int log_level = WLR_ERROR;
 static const Rule rules[] = {
   /* app_id     title       tags mask     isfloating   alpha           monitor */
   { "wezterm",     NULL,       0,            0,          0.85,            -1 },
+  { "foot",        NULL,       0,            0,          0.85,            -1 },
   { "firefox",     NULL,       1 << 0,       0,          default_opacity, -1 },
   { "discord",     "Discord",  1 << 2,       0,          default_opacity, -1 },
   { "chatterino",  NULL,       1 << 4,       0,          default_opacity, -1 },
@@ -146,7 +147,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "wezterm", NULL };
+static const char *termcmd[] = { "foot", NULL };
 
 static const Key keys[] = {
   /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
