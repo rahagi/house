@@ -19,5 +19,7 @@
     devenv
     postgresql
     openvpn
+    httpie
+    httpie-desktop
   ];
 }
