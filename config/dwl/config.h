@@ -57,6 +57,7 @@ static const ForceTearingRule force_tearing[] = {
   {.title = "", .appid = "steam_app_1245620"}, // ELDEN RING
   {.title = "", .appid = "steam_app_814380"},  // Sekiro
   {.title = "Counter-Strike 2", .appid = "SDL Application"},  // CS2
+  {.title = "", .appid = "steam_app_1422450"},  // Deadlock
   {.title = "", .appid = "Waydroid"},
   {.title = "", .appid = "gamescope"},
 };
