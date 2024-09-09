@@ -35,7 +35,7 @@
     enable = true;
     scripts = with pkgs.mpvScripts; [
       autoload
-      modernx-zydezu
+      modernx
       mpris
       thumbfast
       videoclip
