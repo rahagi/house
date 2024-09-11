@@ -20,6 +20,5 @@
     postgresql
     openvpn
     httpie
-    httpie-desktop
   ];
 }
