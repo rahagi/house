@@ -20,5 +20,6 @@
     postgresql
     openvpn
     httpie
+    teleport
   ];
 }
