@@ -10,3 +10,6 @@ switch-guinea-pig:
 
 switch-x260:
 	sudo nixos-rebuild switch --flake .#x260
+
+diff:
+	nix store diff-closures /run/*-system
