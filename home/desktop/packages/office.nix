@@ -4,5 +4,6 @@
     sc-im
     pandoc
     texlive.combined.scheme-medium
+    foliate
   ];
 }

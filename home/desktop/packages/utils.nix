@@ -58,5 +58,8 @@
     qbittorrent
     unar
     mullvad-vpn
+    blanket
+    ventoy-full
+    nethogs
   ];
 }
