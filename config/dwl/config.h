@@ -5,10 +5,8 @@ static const int smartgaps                 = 1; /* 1 means no outer gap when the
 static const int smartborders              = 1;
 static const int monoclegaps               = 0; /* 1 means outer gaps in monocle layout */
 static const unsigned int borderpx         = 3; /* border pixel of windows */
-static const unsigned int gappih           = 9; /* horiz inner gap between windows */
-static const unsigned int gappiv           = 9; /* vert inner gap between windows */
-static const unsigned int gappoh           = 9; /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov           = 9; /* vert outer gap between windows and screen edge */
+static const unsigned int gaps             = 1;  /* 1 means gaps between windows are added */
+static const unsigned int gappx            = 9; /* gap pixel between windows */
 /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
 static const float default_opacity         = 1;
@@ -53,6 +51,8 @@ static const Rule rules[] = {
   { "steam",       NULL,       1 << 5,       0,          default_opacity, -1 },
 };
 
+
+static int tearing_allowed = 1;
 static const ForceTearingRule force_tearing[] = {
   {.title = "", .appid = "osu!"},
   {.title = "", .appid = "steam_app_1245620"}, // ELDEN RING

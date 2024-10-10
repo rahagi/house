@@ -50,8 +50,8 @@ in {
           src = fetchFromGitHub {
             owner = "rahagi";
             repo = "dwl";
-            rev = "v0.7.1-tearing";
-            sha256 = "sha256-sp88hlnnmnp2Ibrb8OlH8a54TDKWe4pgZ84lnKE4nD8=";
+            rev = "4cb24afeaf5a83701a43fcb228012a268a9abf7e";
+            sha256 = "sha256-AN02Qlh8zXPWGSKPS/7F4k6aL/5I1sr0Tu2aoarZDUM=";
           };
         }))
         .override {configH = cfg.dwl.configFile;})
