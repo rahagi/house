@@ -61,5 +61,6 @@
     blanket
     ventoy-full
     nethogs
+    iptables
   ];
 }
