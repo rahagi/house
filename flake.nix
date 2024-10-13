@@ -12,12 +12,14 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs = inputs @ {
     nixpkgs,
     chaotic,
     home-manager,
+    nix-alien,
     ...
   }: let
     hosts = [
@@ -43,16 +45,22 @@
 
     nixosConfigurations = builtins.listToAttrs (map (host: {
         name = host.name;
-        value = nixpkgs.lib.nixosSystem {
+        value = nixpkgs.lib.nixosSystem rec {
           system = host.system;
-          specialArgs = {inherit inputs;};
+          specialArgs = {
+            inherit inputs;
+            inherit system;
+          };
           modules = [
             host.path
             chaotic.nixosModules.default
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = {inherit inputs;};
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit system;
+              };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.rhg = import host.homePath;
