@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  system,
+  inputs,
+  ...
+}: {
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
@@ -16,10 +21,16 @@
     dbeaver-bin
     wireguard-tools
     nodejs
+    bun
     devenv
     postgresql
     openvpn
     httpie
     teleport
+    mitmproxy
+    httptoolkit
+    inputs.nix-alien.packages.${system}.nix-alien
+    localstack
+    awscli2
   ];
 }
