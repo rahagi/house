@@ -27,6 +27,7 @@ static const char *tags[] = {"᮰", "᮱", "᮲", "᮳", "᮴", "᮵", "᮶", "�
 
 /* Autostart */
 static const char *const autostart[] = {
+  "kanshi", NULL,
   "musicd", NULL,
   "dwlinfo", NULL,
   "wallpaper", NULL,
