@@ -35,12 +35,18 @@
     enable = true;
     scripts = with pkgs.mpvScripts; [
       autoload
-      modernx
+      uosc
       mpris
       thumbfast
       videoclip
       webtorrent-mpv-hook
     ];
+    scriptOpts = {
+      videoclip = {
+        video_folder_path = ".";
+        audio_folder_path = ".";
+      };
+    };
   };
 
   home.packages = with pkgs; [
