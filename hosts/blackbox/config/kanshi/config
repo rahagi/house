@@ -1,0 +1,3 @@
+profile {
+  output DP-3 mode 1920x1080@164.996994Hz adaptive_sync on
+}
