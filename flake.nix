@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,6 +18,7 @@
 
   outputs = inputs @ {
     nixpkgs,
+    nixpkgs-stable,
     chaotic,
     home-manager,
     nix-alien,
@@ -50,6 +52,10 @@
           specialArgs = {
             inherit inputs;
             inherit system;
+            pkgs-stable = import nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
+            };
           };
           modules = [
             host.path
@@ -60,6 +66,10 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
+                pkgs-stable = import nixpkgs-stable {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
