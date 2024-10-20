@@ -11,4 +11,5 @@
   sops.secrets.ssh-config = {};
   sops.secrets.lastfm-username = {};
   sops.secrets.lastfm-password = {};
+  sops.secrets."api-keys.env" = {};
 }

@@ -45,17 +45,19 @@
       }
     ];
 
-    nixosConfigurations = builtins.listToAttrs (map (host: {
+    nixosConfigurations = builtins.listToAttrs (map (host: let
+        pkgs-stable = import nixpkgs-stable {
+          system = host.system;
+          config.allowUnfree = true;
+        };
+      in {
         name = host.name;
         value = nixpkgs.lib.nixosSystem rec {
           system = host.system;
           specialArgs = {
             inherit inputs;
             inherit system;
-            pkgs-stable = import nixpkgs-stable {
-              inherit system;
-              config.allowUnfree = true;
-            };
+            inherit pkgs-stable;
           };
           modules = [
             host.path
@@ -66,10 +68,7 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
-                pkgs-stable = import nixpkgs-stable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
+                inherit pkgs-stable;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
