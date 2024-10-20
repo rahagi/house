@@ -33,3 +33,4 @@ export PF_INFO="ascii title os kernel uptime wm shell editor cpu"
 export GTK_USE_PORTAL=0
 
 . "$HOME/.cache/wal/env-color"
+. "$HOME/.config/sops-nix/secrets/api-keys.env"
