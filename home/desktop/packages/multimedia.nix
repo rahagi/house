@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   xdg.configFile."easyeffects/output" = {
     source = ../../../config/easyeffects/output;
     recursive = true;
@@ -49,17 +53,18 @@
     };
   };
 
-  home.packages = with pkgs; [
-    musescore
-    pavucontrol
-    mpd
-    ncmpcpp
-    mpc-cli
-    ffmpeg
-    libvpx
-    libvorbis
-    mpdscribble
-    anki
-    gimp
-  ];
+  home.packages = with pkgs;
+    [
+      musescore
+      pavucontrol
+      mpd
+      ncmpcpp
+      mpc-cli
+      ffmpeg
+      libvpx
+      libvorbis
+      mpdscribble
+      gimp
+    ]
+    ++ (with pkgs-stable; [anki]);
 }

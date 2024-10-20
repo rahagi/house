@@ -13,7 +13,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
   chaotic.scx.enable = true;
-  chaotic.scx.scheduler = "scx_rusty";
+  chaotic.scx.scheduler = "scx_lavd";
 
   networking.networkmanager.enable = true;
 
