@@ -135,7 +135,7 @@
       siji
       twemoji-color-font
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       nerdfonts
       (pkgs.callPackage ../packages/kairaga.nix {})
     ];

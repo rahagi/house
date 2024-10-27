@@ -47,6 +47,7 @@ static const Rule rules[] = {
   { "firefox",     NULL,       1 << 0,       0,          default_opacity, -1 },
   { "discord",     "Discord",  1 << 2,       0,          default_opacity, -1 },
   { "armcord",     NULL,       1 << 2,       0,          default_opacity, -1 },
+  { "legcord",     NULL,       1 << 2,       0,          default_opacity, -1 },
   { "chatterino",  NULL,       1 << 4,       0,          default_opacity, -1 },
   { "mpv",         NULL,       1 << 4,       0,          default_opacity, -1 },
   { "steam",       NULL,       1 << 5,       0,          default_opacity, -1 },
