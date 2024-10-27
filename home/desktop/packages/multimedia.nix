@@ -65,6 +65,7 @@
       libvorbis
       mpdscribble
       gimp
-    ]
-    ++ (with pkgs-stable; [anki]);
+      anki
+    ];
+    # ++ (with pkgs-stable; [anki]);
 }
