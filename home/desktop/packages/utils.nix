@@ -62,5 +62,7 @@
     ventoy-full
     nethogs
     iptables
+    fd
+    age
   ];
 }
