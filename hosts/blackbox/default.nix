@@ -28,10 +28,6 @@
   virtualisation.waydroid.enable = true;
   virtualisation.docker = {
     enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
   };
   programs.corectrl = {
     enable = true;
