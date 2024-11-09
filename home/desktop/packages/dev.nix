@@ -36,7 +36,7 @@
     mitmproxy
     httptoolkit
     inputs.nix-alien.packages.${system}.nix-alien
-    localstack
+    # localstack
     awscli2
     love
     cloc
