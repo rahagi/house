@@ -10,5 +10,6 @@
     winetricks
     outfox
     (pkgs.callPackage ../../../packages/osu-lazer-bin.nix {})
+    hmcl
   ];
 }
