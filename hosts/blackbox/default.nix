@@ -45,4 +45,6 @@
     };
     rocmOverrideGfx = "10.3.0";
   };
+
+  services.speechd.enable = true;
 }

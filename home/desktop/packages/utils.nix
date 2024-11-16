@@ -64,5 +64,9 @@
     iptables
     fd
     age
+    chafa
+    slides
+    graph-easy
+    figlet
   ];
 }
