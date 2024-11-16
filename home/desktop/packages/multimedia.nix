@@ -53,19 +53,19 @@
     };
   };
 
-  home.packages = with pkgs;
-    [
-      musescore
-      pavucontrol
-      mpd
-      ncmpcpp
-      mpc-cli
-      ffmpeg
-      libvpx
-      libvorbis
-      mpdscribble
-      gimp
-      anki
-    ];
-    # ++ (with pkgs-stable; [anki]);
+  home.packages = with pkgs; [
+    musescore
+    pavucontrol
+    mpd
+    ncmpcpp
+    mpc-cli
+    ffmpeg
+    libvpx
+    libvorbis
+    mpdscribble
+    gimp
+    anki
+    piper-tts
+  ];
+  # ++ (with pkgs-stable; [anki]);
 }

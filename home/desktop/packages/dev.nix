@@ -41,5 +41,7 @@
     love
     cloc
     teleport
+    zig
+    hyx
   ];
 }
