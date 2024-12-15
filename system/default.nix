@@ -12,8 +12,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  chaotic.scx.enable = true;
-  chaotic.scx.scheduler = "scx_lavd";
+  # chaotic.scx.enable = true;
+  # chaotic.scx.scheduler = "scx_rustland";
 
   networking.networkmanager.enable = true;
 
@@ -136,9 +136,8 @@
       twemoji-color-font
       noto-fonts
       noto-fonts-cjk-sans
-      nerdfonts
       (pkgs.callPackage ../packages/kairaga.nix {})
-    ];
+    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     fontconfig = {
       defaultFonts = {
         monospace = ["MapleMono"];
