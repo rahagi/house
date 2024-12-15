@@ -15,6 +15,9 @@
   users.users.rhg.extraGroups = ["corectrl" "docker"];
 
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 1048576;
+  };
 
   # hardware.graphics = {
   #   extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl vaapiVdpau];

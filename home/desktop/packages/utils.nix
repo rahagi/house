@@ -68,5 +68,7 @@
     slides
     graph-easy
     figlet
+    usb-modeswitch
+    protonvpn-gui
   ];
 }
