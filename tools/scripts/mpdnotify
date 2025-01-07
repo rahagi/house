@@ -1,14 +1,15 @@
 #!/bin/sh
 
 MUSIC_DIR=$HOME/music
-CURRENT="$@"
+FORMAT='[[%artist%] - [%title%]#|[%file%]]'
+CURRENT="$(mpc current -f "$FORMAT" --wait)"
 
 show_notif() {
   notify-send -i "$2" "Now Playing" "$1"
 }
 
 get_albumart() {
-  echo $(find "$1" -maxdepth 1 -type f | grep -i -w 'jpg\|png' | head -n 1)
+  echo $(du -ah "$1" | sort -rh | grep -i -w '\(cover\|folder\)\.\(jpg\|png\)' | head -n 1 | cut -f2-)
 }
 
 main() {
