@@ -42,6 +42,11 @@
     cloc
     teleport
     zig
+    zls
     hyx
+    libgcc
+    clang
+    odin
+    ols
   ];
 }

@@ -4,9 +4,7 @@ sleep 1s
 
 [ "$(pgrep -f "$0")" != "$$" ] && exit 1;
 
-FORMAT='[[%artist%] - [%title%]#|[%file%]]'
-
 while true;
 do
-  [ -n "$(pgrep mpd)" ] && mpdnotify "$(mpc current -f "$FORMAT" --wait)"
+  [ -n "$(pgrep mpd)" ] && mpdnotify
 done

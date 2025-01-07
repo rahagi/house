@@ -70,5 +70,9 @@
     figlet
     usb-modeswitch
     protonvpn-gui
+    qtscrcpy
+    parallel
+    picard
+    dust
   ];
 }
