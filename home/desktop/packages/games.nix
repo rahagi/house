@@ -12,5 +12,6 @@
     (pkgs.callPackage ../../../packages/osu-lazer-bin.nix {})
     hmcl
     heroic
+    space-cadet-pinball
   ];
 }
