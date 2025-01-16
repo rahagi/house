@@ -74,5 +74,6 @@
     parallel
     picard
     dust
+    unrar
   ];
 }
