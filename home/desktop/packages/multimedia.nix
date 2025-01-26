@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-stable,
+  pkgs-deprecated,
   ...
 }: {
   xdg.configFile."easyeffects/output" = {
@@ -66,6 +66,7 @@
     gimp
     anki
     piper-tts
+    (pkgs.callPackage ../../../packages/yt-dlp.nix {})
   ];
   # ++ (with pkgs-stable; [anki]);
 }

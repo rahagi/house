@@ -48,5 +48,9 @@
     clang
     odin
     ols
+    cloudflared
+    tesseract
+    cargo
+    cargo-edit
   ];
 }
