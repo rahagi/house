@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-deprecated.url = "github:nixos/nixpkgs/nixos-24.05";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -19,6 +20,7 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-stable,
+    nixpkgs-deprecated,
     chaotic,
     home-manager,
     nix-alien,
@@ -50,6 +52,10 @@
           system = host.system;
           config.allowUnfree = true;
         };
+        pkgs-deprecated = import nixpkgs-deprecated {
+          system = host.system;
+          config.allowUnfree = true;
+        };
       in {
         name = host.name;
         value = nixpkgs.lib.nixosSystem rec {
@@ -58,6 +64,7 @@
             inherit inputs;
             inherit system;
             inherit pkgs-stable;
+            inherit pkgs-deprecated;
           };
           modules = [
             host.path
@@ -69,6 +76,7 @@
                 inherit inputs;
                 inherit system;
                 inherit pkgs-stable;
+                inherit pkgs-deprecated;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
