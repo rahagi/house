@@ -2,6 +2,6 @@
 
 WALLPAPER="$HOME/.cache/wallpaper.jpg"
 
-wal -i "$WALLPAPER" -n
+wal -i "$WALLPAPER" -n -c --cols16 --saturate 0.35 -a 70
 swaybg -m fill -i "$WALLPAPER"
 

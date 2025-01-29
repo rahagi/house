@@ -75,5 +75,6 @@
     picard
     dust
     unrar
+    bitwarden-desktop
   ];
 }
