@@ -13,5 +13,6 @@
     hmcl
     heroic
     space-cadet-pinball
+    sc-controller
   ];
 }

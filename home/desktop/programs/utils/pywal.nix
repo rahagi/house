@@ -5,5 +5,5 @@
     recursive = true;
   };
 
-  home.packages = with pkgs; [pywal swaybg];
+  home.packages = with pkgs; [pywal16 swaybg];
 }

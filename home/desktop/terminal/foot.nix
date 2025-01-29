@@ -2,6 +2,9 @@
   programs.foot = {
     enable = true;
     settings = {
+      colors = {
+        alpha = 0.7;
+      };
       main = {
         font = "monospace:size=13";
         dpi-aware = "yes";
