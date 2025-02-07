@@ -76,5 +76,8 @@
     dust
     unrar
     bitwarden-desktop
+    pdftk
+    fuse-overlayfs
+    dwarfs
   ];
 }

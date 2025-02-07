@@ -52,7 +52,6 @@
     tesseract
     cargo
     cargo-edit
-    distrobox
-    podman-compose
+    bubblewrap
   ];
 }
