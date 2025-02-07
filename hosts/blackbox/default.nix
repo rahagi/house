@@ -12,7 +12,7 @@
   networking.hostName = "blackbox";
   networking.firewall.enable = false;
 
-  users.users.rhg.extraGroups = ["corectrl" "podman"];
+  users.users.rhg.extraGroups = ["corectrl" "docker"];
 
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
   boot.kernel.sysctl = {
@@ -29,13 +29,8 @@
 
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;
-  # virtualisation.docker = {
-  #   enable = true;
-  # };
-  virtualisation.podman = {
+  virtualisation.docker = {
     enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
   };
 
   programs.corectrl = {
@@ -48,11 +43,11 @@
 
   services.ollama = {
     enable = true;
-    # acceleration = "rocm";
-    # environmentVariables = {
-    #   HSA_OVERRIDE_GFX_VERSION = "10.3.0";
-    # };
-    # rocmOverrideGfx = "10.3.0";
+    acceleration = "rocm";
+    environmentVariables = {
+      HSA_OVERRIDE_GFX_VERSION = "10.3.0";
+    };
+    rocmOverrideGfx = "10.3.0";
   };
 
   services.speechd.enable = true;

@@ -13,6 +13,7 @@
     hmcl
     heroic
     space-cadet-pinball
-    sc-controller
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
   ];
 }
