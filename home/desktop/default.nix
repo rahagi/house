@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   imports = [
     ./mimeapps.nix
     ./environment/dwl.nix
@@ -40,8 +44,8 @@
       package = pkgs.whitesur-gtk-theme;
     };
     iconTheme = {
-      package = pkgs.whitesur-icon-theme;
-      name = "WhiteSur-dark";
+      package = pkgs-stable.colloid-icon-theme;
+      name = "Colloid-Dark";
     };
   };
 

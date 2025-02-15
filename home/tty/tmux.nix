@@ -1,16 +1,16 @@
 {pkgs, ...}: {
   programs.tmux = {
-    package = with pkgs;
-      tmux.overrideAttrs (prev: rec {
-        version = "3.4";
-        src = fetchFromGitHub {
-          owner = "tmux";
-          repo = "tmux";
-          rev = version;
-          sha256 = "sha256-RX3RZ0Mcyda7C7im1r4QgUxTnp95nfpGgQ2HRxr0s64=";
-        };
-        configureFlags = prev.configureFlags ++ ["--enable-sixel"];
-      });
+    # package = with pkgs;
+    #   tmux.overrideAttrs (prev: rec {
+    #     version = "3.4";
+    #     src = fetchFromGitHub {
+    #       owner = "tmux";
+    #       repo = "tmux";
+    #       rev = version;
+    #       sha256 = "sha256-RX3RZ0Mcyda7C7im1r4QgUxTnp95nfpGgQ2HRxr0s64=";
+    #     };
+    #     configureFlags = prev.configureFlags ++ ["--enable-sixel"];
+    #   });
     enable = true;
     clock24 = true;
     keyMode = "vi";
@@ -18,7 +18,7 @@
     # terminal = "screen-256color";
     # terminal = "tmux-256color";
     terminal = "screen-256color-bce";
-    plugins = with pkgs; [tmuxPlugins.resurrect tmuxPlugins.sensible];
+    plugins = with pkgs; [tmuxPlugins.sensible];
     extraConfig = ''
       set -g status-style 'bg=#333333'
       set -s escape-time 0
