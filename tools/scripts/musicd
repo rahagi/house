@@ -2,5 +2,4 @@
 
 mpd && sleep 0.5
 mpdscribble
-noise &
 music-notif-daemon &
