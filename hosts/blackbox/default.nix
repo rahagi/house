@@ -55,4 +55,8 @@
     enable = true;
     scheduler = "scx_lavd";
   };
+  services.pcscd = {
+    enable = true;
+    plugins = [pkgs.acsccid];
+  };
 }
