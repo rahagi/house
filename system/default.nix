@@ -136,6 +136,7 @@
         maple-mono
         siji
         twemoji-color-font
+        noto-fonts-color-emoji
         noto-fonts
         noto-fonts-cjk-sans
         (pkgs.callPackage ../packages/kairaga.nix {})
@@ -179,7 +180,7 @@
     '';
   };
 
-  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.enable = true;
 
   programs.droidcam.enable = true;
 
