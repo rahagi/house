@@ -57,7 +57,7 @@
     via
     qbittorrent
     unar
-    mullvad-vpn
+    # mullvad-vpn
     blanket
     ventoy-full
     nethogs

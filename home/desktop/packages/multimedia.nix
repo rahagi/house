@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   xdg.configFile."easyeffects/output" = {
     source = ../../../config/easyeffects/output;
     recursive = true;
@@ -76,5 +73,6 @@
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
     gst_all_1.gst-vaapi
+    libsForQt5.kdenlive
   ];
 }
