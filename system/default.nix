@@ -44,7 +44,7 @@
 
   environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
   environment.systemPackages = with pkgs; [
-    neovim
+    vim
     wget
     curl
     git
