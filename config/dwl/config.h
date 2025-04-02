@@ -42,15 +42,16 @@ static int log_level = WLR_ERROR;
 
 static const Rule rules[] = {
   /* app_id     title       tags mask     isfloating   alpha           monitor */
-  { "wezterm",     NULL,       0,            0,          0.85,            -1 },
-  { "foot",        NULL,       0,            0,          0.85,            -1 },
-  { "firefox",     NULL,       1 << 0,       0,          default_opacity, -1 },
-  { "discord",     "Discord",  1 << 2,       0,          default_opacity, -1 },
-  { "armcord",     NULL,       1 << 2,       0,          default_opacity, -1 },
-  { "legcord",     NULL,       1 << 2,       0,          default_opacity, -1 },
-  { "chatterino",  NULL,       1 << 4,       0,          default_opacity, -1 },
-  { "mpv",         NULL,       1 << 4,       0,          default_opacity, -1 },
-  { "steam",       NULL,       1 << 5,       0,          default_opacity, -1 },
+  { "wezterm",           NULL,       0,            0,          0.85,            -1 },
+  { "foot",              NULL,       0,            0,          0.85,            -1 },
+  { "firefox",           NULL,       1 << 0,       0,          default_opacity, -1 },
+  { "brave-browser",     NULL,       1 << 0,       0,          default_opacity, -1 },
+  { "discord",           "Discord",  1 << 2,       0,          default_opacity, -1 },
+  { "armcord",           NULL,       1 << 2,       0,          default_opacity, -1 },
+  { "legcord",           NULL,       1 << 2,       0,          default_opacity, -1 },
+  { "chatterino",        NULL,       1 << 4,       0,          default_opacity, -1 },
+  { "mpv",               NULL,       1 << 4,       0,          default_opacity, -1 },
+  { "steam",             NULL,       1 << 5,       0,          default_opacity, -1 },
 };
 
 
