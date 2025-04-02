@@ -59,4 +59,8 @@
     enable = true;
     plugins = [pkgs.acsccid];
   };
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 }
