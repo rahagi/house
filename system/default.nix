@@ -133,7 +133,7 @@
   fonts = {
     packages = with pkgs;
       [
-        maple-mono
+        maple-mono.variable
         siji
         twemoji-color-font
         noto-fonts-color-emoji
