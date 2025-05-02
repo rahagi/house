@@ -40,26 +40,41 @@
   gtk = {
     enable = true;
     theme = {
-      name = "WhiteSur-Dark";
+      name = "WhiteSur";
       package = pkgs.whitesur-gtk-theme;
     };
     iconTheme = {
       package = pkgs-stable.colloid-icon-theme;
-      name = "Colloid-Dark";
+      name = "Colloid";
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
   };
 
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+      # xdg-desktop-portal-wlr
+      # kdePackages.xdg-desktop-portal-kde
     ];
     config = {
       common = {
-        default = "gtk";
-        "org.freedesktop.impl.portal.FileChooser" = "kde";
-        "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+        default = "*";
+        # "org.freedesktop.impl.portal.FileChooser" = "gtk";
+        # "org.freedesktop.impl.portal.ScreenCast" = "hyprland";
       };
     };
   };

@@ -75,7 +75,7 @@
       httpie
       # mitmproxy
       httptoolkit
-      inputs.nix-alien.packages.${system}.nix-alien
+      # inputs.nix-alien.packages.${system}.nix-alien
       # localstack
       awscli2
       love
