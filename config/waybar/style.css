@@ -1,0 +1,131 @@
+@import '~/../../../.cache/wal/colors-waybar.css';
+
+* {
+  border: none;
+  border-radius: 5px;
+  min-height: 0;
+  font-family: "monospace";
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0;
+}
+
+window#waybar {
+  /*background: @background;
+  border-bottom: 2px solid @color11;*/
+  background: transparent;
+}
+
+tooltip {
+  background-color: @background;
+  border: 2px solid @foreground;
+}
+
+#mpd,
+#cava,
+#custom-mpd-prev,
+#custom-mpd-toggle,
+#custom-mpd-next,
+#mpd-control,
+#wireplumber,
+#cpu,
+#memory,
+#disk,
+#network,
+#clock,
+#tray,
+#battery,
+#window {
+  margin: 6px 12px 0px 0px;
+  padding: 1px 8px;
+  background-color: @background;
+  border: 2px solid @foreground;
+  color: @foreground;
+}
+
+#mpd,
+#cava,
+#custom-mpd-prev,
+#custom-mpd-toggle,
+#custom-mpd-next,
+#mpd-control {
+  background-color: @foreground;
+  color: @background;
+}
+
+#mpd,
+#custom-mpd-prev,
+#custom-mpd-toggle,
+#custom-mpd-next {
+  border: none;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0px;
+}
+
+
+#cava {
+  padding: 0px 0px;
+  border: none;
+}
+
+.modules-right > widget > #tray:last-child {
+  margin-right: 12px;
+}
+
+.modules-right > widget > #clock:last-child {
+  margin-right: 12px;
+}
+
+#window {
+  background-color: transparent;
+  border: none;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+  border: none;
+}
+
+#workspaces {
+  margin: 6px 12px 0px 12px;
+  padding: 1px 2px;
+  background-color: @background;
+  border: 2px solid @foreground;
+}
+
+#workspaces button {
+  min-width: 0;
+  padding: 1px 6px;
+  color: @foreground;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: @background;
+  color: @foreground;
+}
+
+#workspaces button.empty {
+  color: @color10;
+}
+
+#workspaces button.active {
+  background-color: @foreground;
+  color: @background;
+}
+
+#workspaces button.urgent {
+  background-color: #99635D;
+  color: @foreground;
+}
+
+#cpu.critical,
+#memory.critical {
+  margin: 6px 12px 0px 0px;
+  padding: 1px 8px;
+  background-color: #ddc7a1;
+  border: 2px solid #c7ab7a;
+  color: #c14a4a;
+}

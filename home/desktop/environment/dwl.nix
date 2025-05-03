@@ -14,6 +14,8 @@ in {
   ];
 
   options.desktopEnvironment.dwl = {
+    enable = lib.mkEnableOption "Enable dwl desktop environment";
+
     dwl.configFile = lib.mkOption {
       description = ''
         Path to dwl's `config.h` file
@@ -29,7 +31,7 @@ in {
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       yambar
       (pkgs.callPackage ../../../packages/dwlmsg.nix {})

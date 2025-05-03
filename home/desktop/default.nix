@@ -6,6 +6,7 @@
   imports = [
     ./mimeapps.nix
     ./environment/dwl.nix
+    ./environment/hyprland.nix
     ./packages
     ./terminal
   ];

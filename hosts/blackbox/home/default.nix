@@ -4,7 +4,7 @@
     ../../../home
   ];
 
-  config.desktopEnvironment.dwl = {
-    yambar.configDir = ../config/yambar;
+  config.desktopEnvironment.hyprland = {
+    enable = true;
   };
 }
