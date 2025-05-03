@@ -120,3 +120,6 @@ cheat() {
 source "$HOME"/.zprofile
 eval "$(direnv hook zsh)"
 
+# plugins
+source $HOME/.zsh/plugins/zsh-window-title/zsh-window-title.zsh
+source $HOME/.zsh/plugins/fast-syntax-highlighting/F-Sy-H.plugin.zsh

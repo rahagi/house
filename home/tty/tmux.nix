@@ -28,6 +28,11 @@
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
 
+      set -g allow-rename on
+      set -g set-titles on
+      set -g set-titles-string '#T'
+      set -g automatic-rename off
+
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
       bind r source-file ~/./config/tmux/tmux.conf \; display "config reloaded"
