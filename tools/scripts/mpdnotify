@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 MUSIC_DIR=$HOME/music
 FORMAT='[[%artist%] - [%title%]#|[%file%]]'

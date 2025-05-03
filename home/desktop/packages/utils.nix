@@ -84,5 +84,6 @@
     qpdf
     udiskie
     unflac
+    bfg-repo-cleaner
   ];
 }
