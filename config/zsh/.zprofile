@@ -28,7 +28,7 @@ export TERMINAL=wezterm
 export TERM=wezterm
 export OPENER=xdg-open
 
-export PF_INFO="ascii title os kernel uptime wm shell editor cpu"
+export PF_INFO="ascii title os kernel wm shell editor palette"
 
 export GTK_USE_PORTAL=0
 
