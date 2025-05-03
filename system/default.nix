@@ -143,6 +143,10 @@
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     fontconfig = {
+      subpixel.rgba = "rgb";
+      subpixel.lcdfilter = "default";
+      antialias = true;
+      hinting.enable = true;
       defaultFonts = {
         monospace = ["MapleMono"];
       };
@@ -185,6 +189,8 @@
   programs.droidcam.enable = true;
 
   programs.nix-ld.enable = true;
+
+  programs.xwayland.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

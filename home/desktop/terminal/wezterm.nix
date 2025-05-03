@@ -10,9 +10,9 @@
         force_reverse_video_cursor = true,
         font = wezterm.font_with_fallback({
           "monospace",
-          { family = "Symbols Nerd Font Mono", scale = 0.75 },
+          { family = "Symbols Nerd Font Mono", scale = 1 },
         }),
-        line_height = 0.975,
+        line_height = 1,
         warn_about_missing_glyphs = false,
         window_padding = {
           left = '2cell',
