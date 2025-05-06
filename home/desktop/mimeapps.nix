@@ -33,6 +33,7 @@
       "application/xhtml+xml" = "brave-browser.desktop";
       "application/x-extension-xhtml" = "brave-browser.desktop";
       "application/x-extension-xht" = "brave-browser.desktop";
+      "inode/directory" = "lf.desktop";
     };
   };
 }

@@ -36,6 +36,14 @@
       terminal = false;
       mimeType = ["image/jpeg" "image/png" "image/gif" "image/webp" "image/svg"];
     };
+    lf = {
+      type = "Application";
+      name = "lf";
+      comment = "Terminal file manager";
+      terminal = true;
+      exec = "lf";
+      mimeType = ["inode/directory"];
+    };
   };
 
   gtk = {

@@ -85,5 +85,6 @@
     udiskie
     unflac
     bfg-repo-cleaner
+    nemo-with-extensions
   ];
 }
