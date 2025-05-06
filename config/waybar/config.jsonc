@@ -50,7 +50,17 @@
     "bar_delimiter": 0,
     "bars": 14,
     "reverse": true,
-    "format-icons" : [" ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
+    "format-icons": [
+      " ",
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
   },
 
   "hyprland/window": {
@@ -61,12 +71,12 @@
   "mpd": {
     "interval": 1,
     "tooltip": false,
-    "format": "{randomIcon} {artist} - {title}",
-    "format-stopped": "{randomIcon} {artist} - {title}",
-    "format-paused": "{randomIcon} {artist} - {title}",
-    "max-length": 32,
+    "format": "{randomIcon}{artist} - {title}",
+    "format-stopped": "{randomIcon}{artist} - {title}",
+    "format-paused": "{randomIcon}{artist} - {title}",
+    "max-length": 41,
     "random-icons": {
-      "on": "󰒟"
+      "on": "󰒟 "
     },
     "on-click": "mpc toggle",
     "on-click-middle": "mpc random",
@@ -85,12 +95,14 @@
 
   "custom/mpd-prev": {
     "format": "󰒮",
+    "tooltip": false,
     "interval": 0,
     "on-click": "mpc prev"
   },
 
   "custom/mpd-next": {
     "format": "󰒭",
+    "tooltip": false,
     "interval": 0,
     "on-click": "mpc next"
   },
@@ -108,7 +120,6 @@
   "cpu": {
     "format": " {usage}%",
     "interval": 2,
-
     "states": {
       "critical": 90
     }
@@ -117,7 +128,6 @@
   "memory": {
     "format": " {percentage}%",
     "interval": 2,
-
     "states": {
       "critical": 80
     }
@@ -129,21 +139,21 @@
   },
 
   "network": {
-    "format-wifi" : "󰖩 {bandwidthDownBits}",
+    "format-wifi": "󰖩 {bandwidthDownBits}",
     "format-ethernet": "󰈀 {bandwidthDownBits}",
-    "format-disconnected" : "no network",
+    "format-disconnected": "no network",
     "interval": 5,
     "tooltip": false
   },
 
   "clock": {
-    "format": "󰸗 {:%I:%M %p - %a, %d %b %Y}",
+    "format": "󰸗 {:%H:%M - %a, %d %b %Y}",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "year",
       "mode-mon-col": 3,
-      "on-scroll" : 1,
+      "on-scroll": 1,
       "format": {
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
@@ -151,7 +161,7 @@
   },
 
   "tray": {
-    "spacing": 10,
+    "spacing": 6,
     "tooltip": false
   }
 }

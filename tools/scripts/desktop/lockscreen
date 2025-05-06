@@ -1,14 +1,29 @@
 #!/usr/bin/env bash
 
-BACKGROUND="$(mktemp --suffix=.jpg)"
+locksway() {
+  BACKGROUND="$(mktemp --suffix=.jpg)"
 
-grim - | convert - \
-  -filter Gaussian \
-  -resize 20% \
-  -define "filter:sigma=1.5" \
-  -resize 500% \
-  -fill black \
-  -colorize 40% \
-  "$BACKGROUND"
+  grim - | magick - \
+    -filter Gaussian \
+    -resize 20% \
+    -define "filter:sigma=1.5" \
+    -resize 500% \
+    -fill black \
+    -colorize 40% \
+    "$BACKGROUND"
 
-chayang -d 0.25 && swaylock --font monospace --daemonize --image "$BACKGROUND" --scaling fill
+  swaylock --font monospace --daemonize --image "$BACKGROUND" --scaling fill
+}
+
+lockhypr() {
+  hyprlock
+}
+
+case "$XDG_CURRENT_DESKTOP" in
+  *Hyprland*)
+    lockhypr
+    ;;
+  *)
+    locksway
+    ;;
+esac

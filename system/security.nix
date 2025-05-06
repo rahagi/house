@@ -4,6 +4,7 @@
       auth include login
     '';
   };
+  security.pam.services.hyprlock = {};
   security.pki.certificates = [
     ''
       -----BEGIN CERTIFICATE-----

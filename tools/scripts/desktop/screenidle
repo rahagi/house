@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-SCREEN_OFF_TIMEOUT_S=1800
+LOCK_TIMEOUT_S=900
 
 swayidle -w \
-  timeout "$SCREEN_OFF_TIMEOUT_S" 'chayang -d 1 && toggledisplay' \
-    resume 'toggledisplay' \
-  before-sleep 'lockscreen'
+  timeout "$LOCK_TIMEOUT_S" 'lockscreen'
