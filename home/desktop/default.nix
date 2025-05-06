@@ -63,23 +63,6 @@
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-      # xdg-desktop-portal-wlr
-      # kdePackages.xdg-desktop-portal-kde
-    ];
-    config = {
-      common = {
-        default = "*";
-        # "org.freedesktop.impl.portal.FileChooser" = "gtk";
-        # "org.freedesktop.impl.portal.ScreenCast" = "hyprland";
-      };
-    };
-  };
-
   xdg.configFile."user-dirs.dirs".source = ../../config/user-dirs.dirs;
   home.file."scripts" = {
     source = ../../tools/scripts;

@@ -62,5 +62,18 @@ in {
       source = cfg.yambar.configDir;
       recursive = true;
     };
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+      ];
+      config = {
+        common = {
+          default = "*";
+        };
+      };
+    };
   };
 }

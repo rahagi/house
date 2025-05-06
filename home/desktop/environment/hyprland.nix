@@ -48,5 +48,18 @@ in {
       source = cfg.hypr.configDir;
       recursive = true;
     };
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
+      ];
+      config = {
+        common = {
+          default = "*";
+        };
+      };
+    };
   };
 }
