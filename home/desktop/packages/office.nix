@@ -5,5 +5,6 @@
     pandoc
     texlive.combined.scheme-medium
     foliate
+    sweethome3d.application
   ];
 }

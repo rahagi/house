@@ -13,6 +13,7 @@
   boot.kernel.sysctl = {
     "vm.max_map_count" = 1048576;
   };
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   # hardware.graphics = {
   #   extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl vaapiVdpau];
@@ -58,4 +59,22 @@
     enable = true;
     package = pkgs.usbmuxd2;
   };
+
+  services.udev = {
+    packages = with pkgs; [game-devices-udev-rules via qmk-udev-rules];
+    extraRules = ''
+      SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="plugdev"
+      ACTION=="add"|"remove", SUBSYSTEM=="net", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", ENV{ID_USB_DRIVER}=="rndist_host", SYMLINK+="android"
+      ACTION=="add"|"remove", SUBSYSTEM=="net", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", ENV{ID_USB_DRIVER}=="rndist_host", SYMLINK+="android"
+    '';
+  };
+
+  services.mullvad-vpn.enable = true;
+
+  programs.droidcam.enable = true;
+
+  programs.nix-ld.enable = true;
+
+  programs.xwayland.enable = true;
 }

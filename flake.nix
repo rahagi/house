@@ -14,7 +14,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs = inputs @ {
@@ -23,7 +22,6 @@
     nixpkgs-deprecated,
     chaotic,
     home-manager,
-    nix-alien,
     ...
   }: let
     hosts = [
@@ -47,45 +45,69 @@
       }
     ];
 
-    nixosConfigurations = builtins.listToAttrs (map (host: let
-        pkgs-stable = import nixpkgs-stable {
-          system = host.system;
-          config.allowUnfree = true;
-        };
-        pkgs-deprecated = import nixpkgs-deprecated {
-          system = host.system;
-          config.allowUnfree = true;
-        };
-      in {
-        name = host.name;
-        value = nixpkgs.lib.nixosSystem rec {
-          system = host.system;
+    nixosConfigurations =
+      builtins.listToAttrs (map (host: let
+          pkgs-stable = import nixpkgs-stable {
+            system = host.system;
+            config.allowUnfree = true;
+          };
+          pkgs-deprecated = import nixpkgs-deprecated {
+            system = host.system;
+            config.allowUnfree = true;
+          };
+        in {
+          name = host.name;
+          value = nixpkgs.lib.nixosSystem rec {
+            system = host.system;
+            specialArgs = {
+              inherit inputs;
+              inherit system;
+              inherit pkgs-stable;
+              inherit pkgs-deprecated;
+            };
+            modules = [
+              host.path
+              chaotic.nixosModules.default
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.extraSpecialArgs = {
+                  inherit inputs;
+                  inherit system;
+                  inherit pkgs-stable;
+                  inherit pkgs-deprecated;
+                };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.rhg = import host.homePath;
+              }
+            ];
+          };
+        })
+        hosts)
+      // {
+        pi-default-img = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
           specialArgs = {
-            inherit inputs;
-            inherit system;
-            inherit pkgs-stable;
-            inherit pkgs-deprecated;
+            inputs = {
+              sops-nix = inputs.sops-nix;
+            };
           };
           modules = [
-            host.path
-            chaotic.nixosModules.default
-
-            home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit system;
-                inherit pkgs-stable;
-                inherit pkgs-deprecated;
-              };
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.rhg = import host.homePath;
+              nixpkgs.config.allowUnsupportedSystem = true;
+              nixpkgs.hostPlatform.system = "aarch64-linux";
+              nixpkgs.buildPlatform.system = "x86_64-linux";
+            }
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix"
+            ./hosts/pi
+
+            {
+              sdImage.compressImage = false;
             }
           ];
         };
-      })
-      hosts);
+      };
   in {
     nixosConfigurations = nixosConfigurations;
   };

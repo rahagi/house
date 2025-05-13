@@ -1,10 +1,14 @@
 {...}: {
+  # TODO: move to desktop environment
   security.pam.services.swaylock = {
     text = ''
       auth include login
     '';
   };
+  # TODO: move to desktop environment
   security.pam.services.hyprlock = {};
+  security.rtkit.enable = true;
+
   security.pki.certificates = [
     ''
       -----BEGIN CERTIFICATE-----
