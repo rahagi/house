@@ -1,7 +1,7 @@
 {...}: {
   imports = [
-    ../home/secret.nix
-    ../home/tty
+    ../../../home/secret.nix
+    ../../../home/tty
   ];
 
   home = {
@@ -12,4 +12,3 @@
 
   programs.home-manager.enable = true;
 }
-
