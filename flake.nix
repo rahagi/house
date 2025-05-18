@@ -43,6 +43,12 @@
         path = ./hosts/blackbox;
         homePath = ./hosts/blackbox/home;
       }
+      {
+        name = "pi";
+        system = "aarch64-linux";
+        path = ./hosts/pi;
+        homePath = ./hosts/pi/home;
+      }
     ];
 
     nixosConfigurations =
@@ -86,27 +92,34 @@
         })
         hosts)
       // {
-        pi-default-img = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = {
-            inputs = {
-              sops-nix = inputs.sops-nix;
-            };
+        pi-default-img = let
+          pkgs-stable = import nixpkgs-stable {
+            system = "aarch64-linux";
+            config.allowUnfree = true;
           };
-          modules = [
-            {
-              nixpkgs.config.allowUnsupportedSystem = true;
-              nixpkgs.hostPlatform.system = "aarch64-linux";
-              nixpkgs.buildPlatform.system = "x86_64-linux";
-            }
-            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix"
-            ./hosts/pi
+        in
+          nixpkgs.lib.nixosSystem {
+            system = "aarch64-linux";
+            specialArgs = {
+              inherit pkgs-stable;
+              inputs = {
+                sops-nix = inputs.sops-nix;
+              };
+            };
+            modules = [
+              {
+                nixpkgs.config.allowUnsupportedSystem = true;
+                nixpkgs.hostPlatform.system = "aarch64-linux";
+                nixpkgs.buildPlatform.system = "x86_64-linux";
+              }
+              "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix"
 
-            {
-              sdImage.compressImage = false;
-            }
-          ];
-        };
+              ./hosts/pi
+              {
+                sdImage.compressImage = false;
+              }
+            ];
+          };
       };
   in {
     nixosConfigurations = nixosConfigurations;

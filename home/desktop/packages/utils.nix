@@ -59,7 +59,7 @@
     unar
     mullvad-vpn
     blanket
-    ventoy-full
+    # ventoy-full
     nethogs
     iptables
     fd
