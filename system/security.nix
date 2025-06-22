@@ -8,6 +8,7 @@
   # TODO: move to desktop environment
   security.pam.services.hyprlock = {};
   security.rtkit.enable = true;
+  security.polkit.enable = true;
 
   security.pki.certificates = [
     ''

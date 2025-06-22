@@ -21,6 +21,7 @@
       };
       buildInputs = (old.buildInputs or []) ++ [pkgs.libnotify pkgs.kdePackages.qtimageformats];
     }))
+    thunderbird
   ];
   # ++ (with pkgs-stable; [chatterino2]);
 }

@@ -2,7 +2,7 @@
   users.users.rhg = {
     isNormalUser = true;
     description = "rhg";
-    extraGroups = pkgs.lib.mkDefault ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel"];
   };
   users.defaultUserShell = pkgs.zsh;
   users.users.root.openssh.authorizedKeys.keys = [
