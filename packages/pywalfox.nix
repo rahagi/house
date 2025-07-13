@@ -5,6 +5,7 @@
 pkgs.python3Packages.buildPythonPackage {
   pname = "pywalfox";
   version = "2.8.0rc1";
+  format = "setuptools";
 
   src = pkgs.fetchFromGitHub {
     owner = "Frewacom";

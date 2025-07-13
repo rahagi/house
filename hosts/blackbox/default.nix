@@ -29,13 +29,11 @@
     enable = true;
   };
 
-  programs.corectrl = {
+  hardware.amdgpu.overdrive = {
     enable = true;
-    gpuOverclock = {
-      enable = true;
-      ppfeaturemask = "0xffffffff";
-    };
+    ppfeaturemask = "0xffffffff";
   };
+  programs.corectrl.enable = true;
 
   services.ollama = {
     enable = true;
