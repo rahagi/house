@@ -47,30 +47,30 @@
     }
   ];
 
-  # setup zeronsd
-  environment.systemPackages = [pkgs-stable.zeronsd];
-  sops.secrets.zerotier-api-key = {};
-  systemd.services.zeronsd = {
-    description = "Provision zeronsd service";
-    requires = ["zerotierone.service"];
-    wants = ["network-online.target"];
-    after = ["network-online.target"];
-    wantedBy = ["multi-user.target"];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = pkgs.lib.mkForce ''
-        /bin/sh -c "${pkgs-stable.zeronsd}"/bin/zeronsd \
-          start \
-          -t /run/secrets/zerotier-api-key \
-          -w \
-          -d u.wu \
-          $(cat /run/secrets/zerotier-network-id)
-      '';
-      TimeoutStopSec = 30;
-      Restart = "always";
-      User = "root";
-    };
-  };
+  # # setup zeronsd
+  # environment.systemPackages = [pkgs-stable.zeronsd];
+  # sops.secrets.zerotier-api-key = {};
+  # systemd.services.zeronsd = {
+  #   description = "Provision zeronsd service";
+  #   requires = ["zerotierone.service"];
+  #   wants = ["network-online.target"];
+  #   after = ["network-online.target"];
+  #   wantedBy = ["multi-user.target"];
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = pkgs.lib.mkForce ''
+  #       /bin/sh -c "${pkgs-stable.zeronsd}"/bin/zeronsd \
+  #         start \
+  #         -t /run/secrets/zerotier-api-key \
+  #         -w \
+  #         -d u.wu \
+  #         $(cat /run/secrets/zerotier-network-id)
+  #     '';
+  #     TimeoutStopSec = 30;
+  #     Restart = "always";
+  #     User = "root";
+  #   };
+  # };
 
   system.stateVersion = "25.05";
 }

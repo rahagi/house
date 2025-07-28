@@ -49,19 +49,19 @@
   sops.defaultSopsFile = ../secrets/secrets.yaml;
   sops.age.keyFile = "/home/rhg/.config/sops/age/keys.txt";
   sops.secrets.zerotier-network-id = {};
-  services.zerotierone = {
-    enable = true;
-    localConf = {
-      settings = {softwareUpdate = "disable";};
-    };
-  };
-  systemd.services.join-zerotier-network = {
-    description = "Join ZeroTier Network";
-    script = ''
-      ${pkgs.zerotierone}/bin/zerotier-cli join $(cat ${config.sops.secrets.zerotier-network-id.path})
-      ${pkgs.zerotierone}/bin/zerotier-cli set $(cat ${config.sops.secrets.zerotier-network-id.path}) allowDNS=1
-    '';
-  };
+  # services.zerotierone = {
+  #   enable = true;
+  #   localConf = {
+  #     settings = {softwareUpdate = "disable";};
+  #   };
+  # };
+  # systemd.services.join-zerotier-network = {
+  #   description = "Join ZeroTier Network";
+  #   script = ''
+  #     ${pkgs.zerotierone}/bin/zerotier-cli join $(cat ${config.sops.secrets.zerotier-network-id.path})
+  #     ${pkgs.zerotierone}/bin/zerotier-cli set $(cat ${config.sops.secrets.zerotier-network-id.path}) allowDNS=1
+  #   '';
+  # };
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
@@ -114,13 +114,18 @@
     };
   };
 
-  services.dnsmasq = {
-    enable = true;
-    settings = {
-      server = ["192.168.1.1" "/u.wu/10.147.17.34"];
-      bind-interfaces = true;
-    };
-  };
+  services.tailscale.enable = true;
+  services.resolved.enable = true;
+  networking.useNetworkd = true;
+  # networking.interfaces.tailscale0.useDHCP = false;
+  networking.nftables.enable = true;
+  # services.dnsmasq = {
+  #   enable = true;
+  #   settings = {
+  #     server = ["192.168.1.1" "/u.wu/10.147.17.34"];
+  #     bind-interfaces = true;
+  #   };
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
