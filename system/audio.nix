@@ -6,5 +6,11 @@
       support32Bit = true;
     };
     pulse.enable = true;
+    extraConfig.pipewire = {
+      "99-fix-cracklng" = {
+        "clock.force-rate" = 48000;
+        "clock.force-quantum" = 500;
+      };
+    };
   };
 }

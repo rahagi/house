@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   imports = [
     ../../system
     ./hardware-configuration.nix
@@ -51,7 +55,7 @@
   };
   services.pcscd = {
     enable = true;
-    plugins = [pkgs.acsccid];
+    plugins = [pkgs-stable.acsccid];
   };
   services.usbmuxd = {
     enable = true;

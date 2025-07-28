@@ -34,6 +34,14 @@
       "application/x-extension-xhtml" = "brave-browser.desktop";
       "application/x-extension-xht" = "brave-browser.desktop";
       "inode/directory" = "lf.desktop";
+      "video/mp4" = "mpv.desktop";
+      "video/x-matroska" = "mpv.desktop";
+      "video/webm" = "mpv.desktop";
+      "video/ogg" = "mpv.desktop";
+      "video/x-msvideo" = "mpv.desktop";
+      "video/x-flv" = "mpv.desktop";
+      "video/x-ms-wmv" = "mpv.desktop";
+      "video/mpeg" = "mpv.desktop";
     };
   };
 }
