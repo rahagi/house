@@ -117,7 +117,6 @@
   services.tailscale.enable = true;
   services.resolved.enable = true;
   networking.useNetworkd = true;
-  # networking.interfaces.tailscale0.useDHCP = false;
   networking.nftables.enable = true;
   # services.dnsmasq = {
   #   enable = true;

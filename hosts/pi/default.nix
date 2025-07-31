@@ -18,9 +18,7 @@
 
   networking.hostName = "pi";
   networking.firewall.enable = false;
-  networking.networkmanager.enable = false;
   networking.wireless.enable = false;
-  networking.useDHCP = true;
 
   users.users.rhg.extraGroups = ["docker" "kvm"];
 
