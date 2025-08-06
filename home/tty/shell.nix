@@ -1,9 +1,10 @@
 {pkgs, ...}: {
-  home.file.".zshrc".source = ../../config/zsh/.zshrc;
+  # home.file.".zshrc".source = ../../config/zsh/.zshrc;
   home.file.".zprofile".source = ../../config/zsh/.zprofile;
 
   programs.zsh = {
     enable = true;
+    initContent = builtins.readFile ../../config/zsh/.zshrc;
     history = {
       extended = false;
       path = "$HOME/.zsh_history";

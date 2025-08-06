@@ -34,34 +34,14 @@
       sops
       gitleaks
       (postman.overrideAttrs (prev: rec {
-        version = "11.18.0";
+        version = "11.56.4";
         src = fetchurl {
           url = "https://dl.pstmn.io/download/version/${version}/linux64";
-          sha256 = "sha256-f/GTghdOTntmcZHuzkZW17dQyaC9y6pcs1oDgUEbyLs=";
+          sha256 = "sha256-bwvNmcSBbwLt3kNbd05Yy2IgNHUJx7qTvDMKrGmOOi0=";
           name = "${prev.pname}-${version}.tar.gz";
         };
       }))
-      (hoppscotch.overrideAttrs (prev: rec {
-        version = "25.2.1-0";
-        src =
-          fetchurl
-          {
-            aarch64-darwin = {
-              url = "https://github.com/hoppscotch/releases/releases/download/v${version}/Hoppscotch_mac_aarch64.dmg";
-              hash = "sha256-1KYc96WUlybXhgPeT97w1mLE2zxmohIhvNMCmEb5Vf0=";
-            };
-            x86_64-darwin = {
-              url = "https://github.com/hoppscotch/releases/releases/download/v${version}/Hoppscotch_mac_x64.dmg";
-              hash = "sha256-wdqgzTXFL7Dvq1DOrjyPE4O3OYfpvmRSLzk+HBJIaTU=";
-            };
-            x86_64-linux = {
-              url = "https://github.com/hoppscotch/releases/releases/download/v${version}/Hoppscotch_linux_x64.AppImage";
-              hash = "sha256-Rpyr7dHTSCqquiN/Z2stdtWBo6AJ1gSEs+RBJx70eLM=";
-            };
-          }
-          .${stdenv.system}
-          or (throw "Unsupported system: ${stdenv.system}");
-      }))
+      hoppscotch
       mkcert
       nss
       android-tools
