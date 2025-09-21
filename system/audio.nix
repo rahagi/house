@@ -7,9 +7,9 @@
     };
     pulse.enable = true;
     extraConfig.pipewire = {
-      "99-fix-cracklng" = {
+      "01-fix-cracklng" = {
         "clock.force-rate" = 48000;
-        "clock.force-quantum" = 500;
+        "clock.force-quantum" = 1024;
       };
     };
   };

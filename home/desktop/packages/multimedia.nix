@@ -73,7 +73,7 @@
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
     gst_all_1.gst-vaapi
-    libsForQt5.kdenlive
+    # libsForQt5.kdenlive
     handbrake
   ];
 }
