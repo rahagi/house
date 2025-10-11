@@ -13,6 +13,7 @@
 
   users.users.rhg.extraGroups = ["corectrl" "docker" "kvm"];
 
+  boot.kernelPackages = pkgs.linuxPackages_6_16;
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
   boot.kernel.sysctl = {
     "vm.max_map_count" = 1048576;
@@ -25,7 +26,7 @@
   # };
 
   chaotic.mesa-git.enable = true;
-  chaotic.hdr.enable = true;
+  # chaotic.hdr.enable = true;
 
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;

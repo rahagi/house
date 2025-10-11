@@ -88,5 +88,8 @@
     nemo-with-extensions
     mosh
     lftp
+    asciinema
+    asciinema-agg
+    filezilla
   ];
 }
