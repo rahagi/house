@@ -78,6 +78,8 @@
       luajitPackages.luarocks
       python3Packages.jupytext
       libimobiledevice
+      ruby
+      podman-compose
     ]
     ++ [pkgs-stable.mitmproxy];
 }

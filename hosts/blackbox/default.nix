@@ -11,7 +11,7 @@
   networking.hostName = "blackbox";
   networking.firewall.enable = false;
 
-  users.users.rhg.extraGroups = ["corectrl" "docker" "kvm"];
+  users.users.rhg.extraGroups = ["corectrl" "podman" "kvm"];
 
   boot.kernelPackages = pkgs.linuxPackages_6_16;
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
@@ -30,8 +30,11 @@
 
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;
-  virtualisation.docker = {
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
     enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
   };
 
   hardware.amdgpu.overdrive = {
