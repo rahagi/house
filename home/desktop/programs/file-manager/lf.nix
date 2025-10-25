@@ -11,7 +11,7 @@
       r = "";
       i = "rename";
       I = ":rename; cmd-home";
-      A = ":rename; cmd-end";
+      a = ":rename; cmd-end";
       c = ":rename; cmd-delete-home";
       C = ":rename; cmd-end; cmd-delete-home";
 
@@ -19,7 +19,7 @@
       gm = ''$lf -remote "send $id cd /mnt/"'';
       gd = ''$lf -remote "send $id cd $HOME/downloads"'';
 
-      "<f-7>" = ''push :mkdir<space>""<c-b>'';
+      "<f-7>" = ''push %mkdir<space>""<c-b>'';
       "<c-d>" = ''!dragon -a "$fx"'';
     };
     settings = {
