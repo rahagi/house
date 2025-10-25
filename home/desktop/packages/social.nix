@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     discord
     telegram-desktop
-    discord-screenaudio
     legcord
     vesktop
     arrpc
