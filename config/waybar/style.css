@@ -108,7 +108,7 @@ window#waybar.empty #window {
 }
 
 #workspaces button.empty {
-  color: @color10;
+  color: @color8;
 }
 
 #workspaces button.active {
