@@ -20,7 +20,7 @@
       gd = ''$lf -remote "send $id cd $HOME/downloads"'';
 
       "<f-7>" = ''push %mkdir<space>""<c-b>'';
-      "<c-d>" = ''!dragon -a "$fx"'';
+      "<c-d>" = ''!dragon-drop -a "$fx"'';
     };
     settings = {
       sixel = true;
