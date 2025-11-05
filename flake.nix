@@ -26,18 +26,6 @@
   }: let
     hosts = [
       {
-        name = "guinea-pig";
-        system = "x86_64-linux";
-        path = ./hosts/guinea-pig;
-        homePath = ./home;
-      }
-      {
-        name = "x260";
-        system = "x86_64-linux";
-        path = ./hosts/x260;
-        homePath = ./hosts/x260/home;
-      }
-      {
         name = "blackbox";
         system = "x86_64-linux";
         path = ./hosts/blackbox;
