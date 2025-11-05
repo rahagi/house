@@ -7,5 +7,6 @@
   home.packages = [
     (pkgs.callPackage ../../../packages/sekirofpsunlock.nix {})
     pkgs.kanshi
+    pkgs.nvtopPackages.amd
   ];
 }

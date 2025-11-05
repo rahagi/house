@@ -13,7 +13,7 @@
 
   users.users.rhg.extraGroups = ["corectrl" "podman" "kvm"];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_16;
+  boot.kernelPackages = pkgs.linuxPackages_6_17;
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
   boot.kernel.sysctl = {
     "vm.max_map_count" = 1048576;

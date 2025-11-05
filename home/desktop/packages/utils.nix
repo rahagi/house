@@ -49,7 +49,6 @@
     atool
     wdisplays
     unixtools.xxd
-    nvtopPackages.full
     cloudflare-warp
     libdrm
     vulkan-tools

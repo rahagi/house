@@ -54,7 +54,7 @@
     pavucontrol
     mpd
     ncmpcpp
-    mpc-cli
+    mpc
     ffmpeg
     libvpx
     libvorbis

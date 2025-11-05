@@ -7,8 +7,8 @@
     ueberzugpp
     ffmpegthumbnailer
     imagemagick
-    xdragon
-    poppler_utils
+    dragon-drop
+    poppler-utils
     zathura
     pfetch-rs
     swappy
