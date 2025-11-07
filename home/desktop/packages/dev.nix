@@ -11,22 +11,22 @@
     nix-direnv.enable = true;
   };
 
-  programs.neovim = {
-    enable = true;
-    extraLuaPackages = ps: with ps; [magick];
-    extraPython3Packages = ps:
-      with ps; [
-        ipython
-        ipykernel
-        pynvim
-        jupyter-client
-        cairosvg
-        pnglatex
-        plotly
-        pyperclip
-        nbformat
-      ];
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   extraLuaPackages = ps: with ps; [magick];
+  #   extraPython3Packages = ps:
+  #     with ps; [
+  #       ipython
+  #       ipykernel
+  #       pynvim
+  #       jupyter-client
+  #       cairosvg
+  #       pnglatex
+  #       plotly
+  #       pyperclip
+  #       nbformat
+  #     ];
+  # };
 
   home.packages = with pkgs;
     [
@@ -80,6 +80,7 @@
       libimobiledevice
       ruby
       podman-compose
+      (pkgs.callPackage ../../../packages/bob-nvim.nix {})
     ]
     ++ [pkgs-stable.mitmproxy];
 }

@@ -7,6 +7,7 @@ export PATH="$HOME/scripts/desktop:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 export GOPATH="$HOME/src/go"
 export GOBIN="$HOME/src/go/bin"
