@@ -89,5 +89,6 @@
     asciinema
     asciinema-agg
     filezilla
+    gcr
   ];
 }
