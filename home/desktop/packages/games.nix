@@ -15,5 +15,6 @@
     space-cadet-pinball
     gpu-screen-recorder
     gpu-screen-recorder-gtk
+    clonehero
   ];
 }
