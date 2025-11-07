@@ -1,5 +1,4 @@
 builds:
   include:
-    - "nixosConfigurations.*"
-    - "*.x86_64-linux.*"
+    - "nixosConfigurations.pi-default-img"
     - "*.aarch64-linux.*"
