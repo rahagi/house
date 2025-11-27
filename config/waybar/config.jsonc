@@ -3,6 +3,7 @@
   "layer": "top",
   "spacing": 0,
   "height": 0,
+  "margin-top": 6,
 
   "modules-left": [
     "hyprland/workspaces",
@@ -147,7 +148,7 @@
   },
 
   "clock": {
-    "format": "󰸗 {:%H:%M - %a, %d %b %Y}",
+    "format": "󰸗 {:%H:%M - %a, %d %b}",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {

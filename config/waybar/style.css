@@ -11,8 +11,6 @@
 }
 
 window#waybar {
-  /*background: @background;
-  border-bottom: 2px solid @color11;*/
   background: transparent;
 }
 
