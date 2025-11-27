@@ -35,7 +35,6 @@
     wget
     curl
     ripgrep
-    zerotierone
     openssl
     bc
     inetutils

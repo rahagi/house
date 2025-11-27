@@ -1,7 +1,7 @@
 {...}: {
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       init.defaultBranch = "master";
       pull.ff = "on";
       commit.gpgsign = true;

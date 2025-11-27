@@ -41,7 +41,6 @@
           name = "${prev.pname}-${version}.tar.gz";
         };
       }))
-      hoppscotch
       mkcert
       nss
       android-tools
@@ -73,7 +72,6 @@
       cargo
       cargo-edit
       bubblewrap
-      android-studio
       lua
       luajitPackages.luarocks
       python3Packages.jupytext

@@ -25,8 +25,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 export GPG_TTY=$(tty)
 export EDITOR=nvim
-export TERMINAL=wezterm
-export TERM=wezterm
+export TERMINAL=foot
+export TERM=foot
 export OPENER=xdg-open
 
 export PF_INFO="ascii title os kernel wm shell editor palette"

@@ -61,7 +61,6 @@
     mpdscribble
     gimp
     anki
-    piper-tts
     yt-dlp
     gst_all_1.gstreamer
     gst_all_1.gstreamermm
