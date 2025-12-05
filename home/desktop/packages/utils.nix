@@ -78,7 +78,6 @@
     fuse-overlayfs
     dwarfs
     killall
-    rembg
     qpdf
     udiskie
     unflac
