@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     steam
-    gamescope_git
     gamemode
     mangohud
     protontricks

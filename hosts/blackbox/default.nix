@@ -20,14 +20,6 @@
   };
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
-  # hardware.graphics = {
-  #   extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl vaapiVdpau];
-  #   extraPackages32 = with pkgs; [driversi686Linux.mesa.drivers];
-  # };
-
-  chaotic.mesa-git.enable = true;
-  # chaotic.hdr.enable = true;
-
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;
   virtualisation.containers.enable = true;

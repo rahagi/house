@@ -89,5 +89,6 @@
     asciinema-agg
     filezilla
     gcr
+    inotify-tools
   ];
 }

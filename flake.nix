@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-deprecated.url = "github:nixos/nixpkgs/nixos-24.11";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +19,6 @@
     nixpkgs,
     nixpkgs-stable,
     nixpkgs-deprecated,
-    chaotic,
     home-manager,
     ...
   }: let
@@ -61,7 +59,6 @@
             };
             modules = [
               host.path
-              chaotic.nixosModules.default
 
               home-manager.nixosModules.home-manager
               {
