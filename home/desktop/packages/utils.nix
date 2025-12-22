@@ -4,7 +4,6 @@
     xz
     unzip
     p7zip
-    ripgrep
     jq
     yq-go
     eza

@@ -29,6 +29,8 @@ export TERMINAL=foot
 export TERM=foot
 export OPENER=xdg-open
 
+export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
+
 export PF_INFO="ascii title os kernel wm shell editor palette"
 
 export GTK_USE_PORTAL=0

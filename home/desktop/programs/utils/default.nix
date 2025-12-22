@@ -1,3 +1,3 @@
 {
-  imports = [./gitui.nix ./pywal.nix];
+  imports = [./gitui.nix ./pywal.nix ./ripgrep.nix];
 }
