@@ -1,3 +1,3 @@
 {
-  imports = [./wezterm.nix ./foot.nix];
+  imports = [./wezterm.nix ./foot.nix ./kitty.nix];
 }

@@ -2,7 +2,12 @@
   pkgs,
   pkgs-stable,
   ...
-}: {
+}: let
+  gtkTheme = pkgs.nightfox-gtk-theme.override {
+    tweakVariants = ["carbonfox" "macos"];
+  };
+  gtkIcon = pkgs.adwaita-icon-theme;
+in {
   imports = [
     ./mimeapps.nix
     ./environment/dwl.nix
@@ -13,8 +18,8 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.apple-cursor;
-    name = "macOS";
+    package = pkgs.whitesur-cursors;
+    name = "WhiteSur-cursors";
     size = 28;
   };
 
@@ -49,17 +54,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "WhiteSur-Dark";
-      package = pkgs.whitesur-gtk-theme;
+      name = "Nightfox-Dark-Carbonfox";
+      package = gtkTheme;
     };
     iconTheme = {
-      package = pkgs-stable.colloid-icon-theme;
-      name = "Colloid";
+      name = "Adwaita";
+      package = gtkIcon;
     };
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
-
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };

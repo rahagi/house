@@ -46,7 +46,6 @@
     wlr-randr
     wev
     atool
-    wdisplays
     unixtools.xxd
     cloudflare-warp
     libdrm

@@ -18,5 +18,7 @@
     chayang
     (pkgs.callPackage ../../../packages/pywalfox.nix {})
     wljoywake
+    wdisplays
+    libadwaita
   ];
 }

@@ -34,10 +34,10 @@
       sops
       gitleaks
       (postman.overrideAttrs (prev: rec {
-        version = "11.56.4";
+        version = "11.77.2";
         src = fetchurl {
           url = "https://dl.pstmn.io/download/version/${version}/linux64";
-          sha256 = "sha256-bwvNmcSBbwLt3kNbd05Yy2IgNHUJx7qTvDMKrGmOOi0=";
+          sha256 = "sha256-TPHPyv5Fx2BsN8sVUVFidkjukCacfafJ2tLJ0s4HlRk=";
           name = "${prev.pname}-${version}.tar.gz";
         };
       }))
