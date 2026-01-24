@@ -28,6 +28,13 @@
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
+  # virtualisation.libvirtd.enable = true;
+  # virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.dragAndDrop = true;
+  users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
 
   hardware.amdgpu.overdrive = {
     enable = true;
@@ -63,6 +70,7 @@
     extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
       SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="plugdev"
+      SUBSYSTEM=="input", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0111", ENV{ID_INPUT_JOYSTICK}=""
       ACTION=="add",    SUBSYSTEM=="net", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", ENV{ID_USB_DRIVER}=="rndist_host", SYMLINK+="android"
       ACTION=="remove", SUBSYSTEM=="net", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", ENV{ID_USB_DRIVER}=="rndist_host", SYMLINK+="android"
       ACTION=="add",    SUBSYSTEM=="net", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", ENV{ID_USB_DRIVER}=="rndist_host", SYMLINK+="android"

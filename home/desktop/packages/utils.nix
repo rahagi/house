@@ -88,5 +88,7 @@
     filezilla
     gcr
     inotify-tools
+    nvme-cli
+    parted
   ];
 }
