@@ -11,7 +11,7 @@
   networking.hostName = "blackbox";
   networking.firewall.enable = false;
 
-  users.users.rhg.extraGroups = ["corectrl" "podman" "kvm"];
+  users.users.rhg.extraGroups = ["corectrl" "podman" "kvm" "vboxusers"];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = ["video=DP-3:1920x1080@165"];

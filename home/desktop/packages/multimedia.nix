@@ -28,6 +28,7 @@
     enable = true;
     plugins = with pkgs; [
       obs-studio-plugins.obs-vaapi
+      obs-studio-plugins.input-overlay
     ];
   };
 

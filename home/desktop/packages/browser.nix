@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [brave firefox librewolf chromium];
+  home.packages = with pkgs; [brave firefox chromium];
 }
