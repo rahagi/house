@@ -37,6 +37,8 @@ in {
       hyprlock
       hyprpolkitagent
       waybar
+
+      hyprlandPlugins.csgo-vulkan-fix
     ];
 
     xdg.configFile."waybar" = {

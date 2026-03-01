@@ -41,6 +41,8 @@
       thumbfast
       videoclip
       webtorrent-mpv-hook
+      evafast
+      eisa01.simplehistory
     ];
     scriptOpts = {
       videoclip = {
@@ -75,5 +77,7 @@
     gst_all_1.gst-vaapi
     # libsForQt5.kdenlive
     handbrake
+    alsa-lib
+    alsa-utils
   ];
 }

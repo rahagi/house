@@ -11,7 +11,7 @@
   networking.hostName = "blackbox";
   networking.firewall.enable = false;
 
-  users.users.rhg.extraGroups = ["corectrl" "podman" "kvm" "vboxusers"];
+  users.users.rhg.extraGroups = ["corectrl" "podman" "kvm" "vboxusers" "gamemode"];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
@@ -80,9 +80,20 @@
 
   services.mullvad-vpn.enable = true;
 
+  services.netbird.useRoutingFeatures = "both";
+  services.netbird.clients.wt0 = {
+    port = 51821;
+    ui.enable = true;
+    openFirewall = true;
+    openInternalFirewall = true;
+  };
+
   programs.droidcam.enable = true;
 
   programs.nix-ld.enable = true;
 
   programs.xwayland.enable = true;
+
+  programs.gamemode.enable = true;
+  programs.gamemode.settings.general.inhibit_screensaver = 0;
 }

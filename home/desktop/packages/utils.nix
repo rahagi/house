@@ -90,5 +90,11 @@
     inotify-tools
     nvme-cli
     parted
+    shntool
+    cuetools
+    flac
+    bubblewrap
+    psmisc
+    wgcf
   ];
 }

@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     lutris
     steam
-    gamemode
     mangohud
     protontricks
     libstrangle
@@ -16,5 +15,7 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     clonehero
+    protonplus
+    gamescope
   ];
 }

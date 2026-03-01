@@ -5,5 +5,7 @@
     legcord
     chatterino2
     thunderbird
+    teamspeak6-client
+    mattermost-desktop
   ];
 }

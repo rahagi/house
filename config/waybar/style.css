@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   min-height: 0;
   font-family: "monospace";
   font-weight: 600;
@@ -90,12 +90,14 @@ window#waybar.empty #window {
   padding: 1px 2px;
   background-color: @background;
   border: 2px solid @foreground;
+  border-radius: 0px;
 }
 
 #workspaces button {
   min-width: 0;
   padding: 1px 6px;
   color: @foreground;
+  border-radius: 0px;
 }
 
 #workspaces button:hover {
@@ -112,6 +114,7 @@ window#waybar.empty #window {
 #workspaces button.active {
   background-color: @foreground;
   color: @background;
+  border-radius: 0px;
 }
 
 #workspaces button.urgent {
