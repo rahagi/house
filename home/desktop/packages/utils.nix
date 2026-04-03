@@ -81,7 +81,6 @@
     unflac
     bfg-repo-cleaner
     nemo-with-extensions
-    mosh
     lftp
     asciinema
     asciinema-agg
@@ -95,6 +94,8 @@
     flac
     bubblewrap
     psmisc
-    wgcf
+    remmina
+    waydroid-helper
+    groff
   ];
 }

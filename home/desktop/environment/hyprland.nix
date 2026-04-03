@@ -2,9 +2,17 @@
   pkgs,
   lib,
   config,
+  hyprland-plugins,
   ...
 }: let
   cfg = config.desktopEnvironment.hyprland;
+  hyprPluginPkgs = hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+  hypr-plugin-dir = pkgs.symlinkJoin {
+    name = "hyrpland-plugins";
+    paths = with hyprPluginPkgs; [
+      csgo-vulkan-fix
+    ];
+  };
 in {
   imports = [
     ../programs/file-manager/lf.nix
@@ -37,9 +45,9 @@ in {
       hyprlock
       hyprpolkitagent
       waybar
-
-      hyprlandPlugins.csgo-vulkan-fix
     ];
+
+    programs.zsh.localVariables = {HYPR_PLUGIN_DIR = hypr-plugin-dir;};
 
     xdg.configFile."waybar" = {
       source = cfg.waybar.configDir;

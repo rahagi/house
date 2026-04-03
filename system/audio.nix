@@ -12,16 +12,16 @@
           {
             name = "libpipewire-module-protocol-pulse";
             args = {
-              pulse.min.req = "1024/48000";
-              pulse.default.req = "1536/48000";
+              pulse.min.req = "441/48000";
+              pulse.default.req = "1024/48000";
               pulse.max.req = "2048/48000";
-              pulse.min.quantum = "1024/48000";
+              pulse.min.quantum = "441/48000";
               pulse.max.quantum = "2048/48000";
             };
           }
         ];
         stream.properties = {
-          node.latency = "1536/48000";
+          node.latency = "441/48000";
           resample.quality = 1;
         };
       };
@@ -30,8 +30,8 @@
       "01-fix-crackling" = {
         "context.properties" = {
           "default.clock.force-rate" = 48000;
-          "default.clock.quantum" = 1536;
-          "default.clock.min-quantum" = 1024;
+          "default.clock.quantum" = 1024;
+          "default.clock.min-quantum" = 441;
           "default.clock.max-quantum" = 2048;
         };
       };

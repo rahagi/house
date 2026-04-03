@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-deprecated.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-deprecated.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +13,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland/v0.54.2";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = inputs @ {
@@ -20,6 +25,7 @@
     nixpkgs-stable,
     nixpkgs-deprecated,
     home-manager,
+    hyprland-plugins,
     ...
   }: let
     hosts = [
@@ -56,6 +62,7 @@
               inherit system;
               inherit pkgs-stable;
               inherit pkgs-deprecated;
+              inherit hyprland-plugins;
             };
             modules = [
               host.path
@@ -67,6 +74,7 @@
                   inherit system;
                   inherit pkgs-stable;
                   inherit pkgs-deprecated;
+                  inherit hyprland-plugins;
                 };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;

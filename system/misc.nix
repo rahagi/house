@@ -67,12 +67,12 @@
     substituters = [
       "https://devenv.cachix.org"
       "https://nixpkgs-python.cachix.org"
-      "https://cache.garnix.io"
+      # "https://cache.garnix.io"
     ];
     trusted-public-keys = [
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      # "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
     ];
   };
 
@@ -102,9 +102,9 @@
     enable32Bit = true;
   };
 
-  services.avahi.nssmdns4 = {
-    enable = true;
-    nssmdns = true;
+  services.avahi = {
+    nssmdns4 = true;
+    nssmdns6 = true;
     publish = {
       enable = true;
       addresses = true;
@@ -126,6 +126,8 @@
   #     bind-interfaces = true;
   #   };
   # };
+
+  documentation.man.generateCaches = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

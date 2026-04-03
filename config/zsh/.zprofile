@@ -37,3 +37,7 @@ export GTK_USE_PORTAL=0
 
 . "$HOME/.cache/wal/env-color"
 . "$HOME/.config/sops-nix/secrets/api-keys.env"
+
+if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+  starthyprland
+fi

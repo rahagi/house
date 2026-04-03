@@ -3,7 +3,7 @@
     lua-language-server
     nil
     alejandra
-    nodePackages_latest.vscode-json-languageserver
+    vscode-json-languageserver
     stylua
     marksman
   ];

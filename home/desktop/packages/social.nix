@@ -7,5 +7,6 @@
     thunderbird
     teamspeak6-client
     mattermost-desktop
+    element-desktop
   ];
 }

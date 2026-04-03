@@ -11,7 +11,13 @@
   networking.hostName = "blackbox";
   networking.firewall.enable = false;
 
-  users.users.rhg.extraGroups = ["corectrl" "podman" "kvm" "vboxusers" "gamemode"];
+  users.users.rhg.extraGroups = [
+    "corectrl"
+    "podman"
+    "kvm"
+    "vboxusers"
+    "gamemode"
+  ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = ["video=DP-3:1920x1080@165"];
@@ -19,6 +25,7 @@
     "vm.max_map_count" = 1048576;
   };
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  boot.binfmt.preferStaticEmulators = true;
 
   # virtualisation: waydroid
   virtualisation.waydroid.enable = true;
@@ -66,7 +73,11 @@
   };
 
   services.udev = {
-    packages = with pkgs; [game-devices-udev-rules via qmk-udev-rules];
+    packages = with pkgs; [
+      game-devices-udev-rules
+      via
+      qmk-udev-rules
+    ];
     extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
       SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="plugdev"
@@ -87,6 +98,32 @@
     openFirewall = true;
     openInternalFirewall = true;
   };
+
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true;
+    openFirewall = true;
+    applications = {
+      env = {
+        PATH = "$(PATH):$(HOME)/.local/bin";
+      };
+      apps = [
+        {
+          name = "Virtual Display";
+          prep-cmd = [
+            {
+              do = "sudo -E -u rhg sh -c 'hyprctl keyword monitor HEADLESS-2,$${SUNSHINE_CLIENT_WIDTH}x$${SUNSHINE_CLIENT_HEIGHT}@$${SUNSHINE_CLIENT_FPS},auto,1;hyprctl keyword monitor DP-3,disable'";
+              undo = "sudo -E -u rhg sh -c 'hyprctl keyword monitor HEADLESS-2,disable;hyprctl reload'";
+            }
+          ];
+          exclude-global-prep-cmd = "false";
+          auto-detach = "true";
+        }
+      ];
+    };
+  };
+  services.getty.autologinUser = "rhg";
 
   programs.droidcam.enable = true;
 

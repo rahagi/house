@@ -66,7 +66,6 @@
       libgcc
       clang
       odin
-      ols
       cloudflared
       tesseract
       cargo

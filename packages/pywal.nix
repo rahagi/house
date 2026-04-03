@@ -17,4 +17,5 @@ pkgs.python3Packages.buildPythonPackage {
     license = lib.licenses.mit;
   };
   doCheck = false;
+  format = "setuptools";
 }
