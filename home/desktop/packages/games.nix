@@ -5,7 +5,7 @@
     mangohud
     protontricks
     libstrangle
-    wineWowPackages.staging
+    wineWow64Packages.waylandFull
     winetricks
     outfox
     (pkgs.callPackage ../../../packages/osu-lazer-bin.nix {})
