@@ -21,7 +21,7 @@
           }
         ];
         stream.properties = {
-          node.latency = "441/48000";
+          node.latency = "1024/48000";
           resample.quality = 1;
         };
       };
