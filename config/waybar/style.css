@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  /* border-radius: 5px; */
+  border-radius: 0px;
   min-height: 0;
   font-family: "monospace";
   font-weight: 600;
@@ -17,6 +17,10 @@ window#waybar {
 tooltip {
   background-color: @background;
   border: 2px solid @foreground;
+}
+
+tooltip label {
+  padding: 4px;
 }
 
 #mpd,

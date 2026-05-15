@@ -41,7 +41,6 @@
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.dragAndDrop = true;
-  users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
 
   hardware.amdgpu.overdrive = {
     enable = true;

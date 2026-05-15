@@ -78,6 +78,7 @@
       ruby
       podman-compose
       (pkgs.callPackage ../../../packages/bob-nvim.nix {})
+      tree-sitter
     ]
     ++ [pkgs-stable.mitmproxy];
 }

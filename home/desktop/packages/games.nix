@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    lutris
+    # lutris
     steam
     mangohud
     protontricks
     libstrangle
-    wineWow64Packages.waylandFull
+    wineWow64Packages.full
     winetricks
     outfox
     (pkgs.callPackage ../../../packages/osu-lazer-bin.nix {})
